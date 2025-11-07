@@ -6,7 +6,7 @@ import Services from "./home/Services"
 import Testimonial from "./home/Testimonial"
 import { useEffect } from "react"
 import { Fetch_Retal_Cars } from "../redux/action/carAction"
-import RentalCars from "./home/RentalCars"
+import RentalCars from "./home/rentalCars"
 
 const Home = () => {
   const {cars} = useSelector((state)=>state.Car);
