@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from "react-redux"
 import Featured_listing from "./home/Featured_listing"
 import Hero_Section from "./home/Hero_Section"
 import Property_By_Location from "./home/Property_by_location"
-import RentalCars from "./home/rentalCars"
 import Services from "./home/Services"
 import Testimonial from "./home/Testimonial"
 import { useEffect } from "react"
 import { Fetch_Retal_Cars } from "../redux/action/carAction"
+import RentalCars from "./home/RentalCars"
 
 const Home = () => {
   const {cars} = useSelector((state)=>state.Car);
