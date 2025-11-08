@@ -5,7 +5,6 @@ import PropertyContact from "./slice/propertyContactSlice"
 import Admin from "./slice/adminSlice" 
 import Contact from "./slice/contactSlice" 
 import Review from "./slice/reviewSlice" 
-import Service from "./slice/serviceSlice" 
 import Car from "./slice/carSlice" 
 
 
@@ -17,7 +16,6 @@ const store = configureStore({
         Admin,
         Contact,
         Review,
-        Service,
         Car
     }
 })

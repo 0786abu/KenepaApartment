@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
 import Featured_listing from "./home/Featured_listing"
-import Services from "./home/Services"
 import Testimonial from "./home/Testimonial"
 import { useEffect } from "react"
 import { Fetch_Retal_Cars } from "../redux/action/carAction"
@@ -24,9 +23,6 @@ const Home = () => {
           <RentalCars/>
         </div>
         )}
-        <div className="mt-16 md:mt-20">
-          <Services/>
-        </div>
         <div className="">
           <Testimonial/>
         </div>

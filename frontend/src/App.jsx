@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import Footer from "./components/Footer"
 import Property_detail from "./components/Property_detail"
-import Services from "./components/Services"
 import Contact from "./components/Contact"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,8 +19,6 @@ import Admin_Add_Property from "./admin_dashboard/Admin_Add_Properties"
 import All_Contacts from "./admin_dashboard/All_Contacts"
 import All_Reviews from "./admin_dashboard/All_Reviews"
 import CreateReview from "./components/CreateReview"
-import Add_Service from "./admin_dashboard/Add_Service"
-import All_Services from "./admin_dashboard/All_Services"
 import AdminProfileUpdate from "./admin_dashboard/Admin_Update_Profile"
 import SendEmailPage from "./admin_dashboard/Admin_Send_Email"
 import Admin_Protected from "./components/screen/Admin_Protected"
@@ -33,7 +30,7 @@ import CarRentalServices from "./components/CarRentalServices"
 const App = () => {
   const location = useLocation();
     
-  const hideNavbarRoutes = ["/dashboard","/change_password","/create_Property","/agent-contacts","/dealers","/my-properties","/sellers","/agents_contact","/admin-dashboard","/admin-dashboard-allproperties","/admin-dashboard-myproperties","/admin-dashboard-addproperty","/admin-dashboard-allcontacts","/admin-dashboard-allreviews","/admin-dashboard-addservice","/admin-dashboard-allservices","/admin-dashboard-update-profile","/admin-dashboard-send-email","/admin-dashboard-change_password","/admin-dashboard-add_car","/admin-dashboard-allcars"];
+  const hideNavbarRoutes = ["/dashboard","/change_password","/create_Property","/agent-contacts","/dealers","/my-properties","/sellers","/agents_contact","/admin-dashboard","/admin-dashboard-allproperties","/admin-dashboard-myproperties","/admin-dashboard-addproperty","/admin-dashboard-allcontacts","/admin-dashboard-allreviews","/admin-dashboard-update-profile","/admin-dashboard-send-email","/admin-dashboard-change_password","/admin-dashboard-add_car","/admin-dashboard-allcars"];
   const dynamicRoutePatterns = [
     /^\/buyer-detail\/.+$/,
     /^\/update-property\/.+$/,
@@ -71,7 +68,6 @@ const App = () => {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/detail/:id" element={<Property_detail/>}></Route>
         <Route path="/car/:id" element={<CarDetail/>}></Route>
-        <Route path="/services" element={<Services/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/create-review" element={<CreateReview/>}></Route>
@@ -87,8 +83,6 @@ const App = () => {
         <Route path="/admin-dashboard-addproperty" element={<Admin_Add_Property/>}></Route>
         <Route path="/admin-dashboard-allcontacts" element={<All_Contacts/>}></Route>
         <Route path="/admin-dashboard-allreviews" element={<All_Reviews/>}></Route>
-        <Route path="/admin-dashboard-allservices" element={<All_Services/>}></Route>
-        <Route path="/admin-dashboard-addservice" element={<Add_Service/>}></Route>
         <Route path="/admin-dashboard-update-profile" element={<AdminProfileUpdate/>}></Route>
         <Route path="/admin-dashboard-change_password" element={<Change_Password/>}></Route>
         <Route path="/admin-dashboard-send-email" element={<SendEmailPage/>}></Route>

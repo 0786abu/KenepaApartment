@@ -13,14 +13,6 @@ const navItems = [
     title: 'Home',
     href: '/',
   },
-  // {
-  //   title: 'Properties',
-  //   href: '/properties',
-  // },
-  {
-    title: 'Services',
-    href: '/services',
-  },
   { title: 'Car Rental', href: '/car-rental' },
   { title: 'Contact', href: '/contact' },
 ]

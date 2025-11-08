@@ -10,7 +10,6 @@ import cookieParser from 'cookie-parser';
 import PropertyRouter from './router/propertyRouter.js';
 import ContactRouter from './router/contactRouter.js';
 import ReviewRouter from './router/reviewRouter.js';
-import ServiceRouter from './router/serviceRouter.js';
 import path from 'path';
 import carRouter from './router/carRouter.js';
 
@@ -34,7 +33,6 @@ app.use("/user",UserRouter)
 app.use("/property",PropertyRouter)
 app.use("/contact",ContactRouter)
 app.use("/review",ReviewRouter)
-app.use("/service",ServiceRouter)
 app.use("/car",carRouter)
 
 
