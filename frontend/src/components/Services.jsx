@@ -44,7 +44,7 @@ const Services = () => {
                     <h2 className=" text-3xl md:text-4xl font-bold font-sans">We are your partner in creating a legacy building facade.</h2>
                     <p className=" text-lg md:text-xl font-[300] font-sans my-4 lg:my-8">We are one of the leading developers in europe providing exquisitely designed modern living villas in unique locations. We have made out quality development an hallmark by incorporating the latest in contemporary architecture to suit your tastes and budget.</p>
                     <p className=" text-lg md:text-xl font-[300] font-sans my-4 lg:my-8">Over 39,000 people work for us in more than 70 countries all over the This breadth of global coverage, combined with specialist services</p>
-                    <button className=" px-6 py-4 z-50 before:duration-300 overflow-hidden after:duration-300 transition-all after:-z-10 before:-z-10 hover:before:right-[-100%] hover:after:left-0  text-white relative before:bg-[#E8C696] before:absolute before:top-0 before:bottom-0 before:right-0 after:absolute after:top-0 after:bottom-0 after:left-[-100%] after:w-full after:h-full after:bg-[#8FA282] before:w-full before:h-full mt-6">Read More</button>
+                    <button className=" px-6 py-4 z-40 before:duration-300 overflow-hidden after:duration-300 transition-all after:-z-10 before:-z-10 hover:before:right-[-100%] hover:after:left-0  text-white relative before:bg-[#E8C696] before:absolute before:top-0 before:bottom-0 before:right-0 after:absolute after:top-0 after:bottom-0 after:left-[-100%] after:w-full after:h-full after:bg-[#8FA282] before:w-full before:h-full mt-6">Read More</button>
                 </div>
             </div>
         </div>
