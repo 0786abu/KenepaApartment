@@ -18,7 +18,6 @@ const Footer = () => {
       </div>
       <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
         <li><Link to="/" className="hover:text-[#A0B591]">Home</Link></li>
-        <li><Link to="/services" className="hover:text-[#A0B591] ">Services</Link></li>
         <li><Link to="/car-rental" className="hover:text-[#A0B591] ">Car Rental</Link></li>
         <li><Link to="/contact" className="hover:text-[#A0B591] ">Contact Us</Link></li>
       </ul>
