@@ -156,7 +156,6 @@ export const getAllCars = async (req, res) => {
     // 🟢 Response
     res.status(200).json({
       success: true,
-      count: cars.length,
       cars,
       allcars
     });
