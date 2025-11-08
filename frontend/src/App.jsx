@@ -20,8 +20,6 @@ import Admin_Add_Property from "./admin_dashboard/Admin_Add_Properties"
 import All_Contacts from "./admin_dashboard/All_Contacts"
 import All_Reviews from "./admin_dashboard/All_Reviews"
 import CreateReview from "./components/CreateReview"
-import All_FeaturedCities from "./admin_dashboard/All_Featured_Cities"
-import Add_Featured_Cities from "./admin_dashboard/Add_Featured_Cities"
 import Add_Service from "./admin_dashboard/Add_Service"
 import All_Services from "./admin_dashboard/All_Services"
 import AdminProfileUpdate from "./admin_dashboard/Admin_Update_Profile"
@@ -35,7 +33,7 @@ import CarRentalServices from "./components/CarRentalServices"
 const App = () => {
   const location = useLocation();
     
-  const hideNavbarRoutes = ["/dashboard","/change_password","/create_Property","/agent-contacts","/dealers","/my-properties","/sellers","/agents_contact","/admin-dashboard","/admin-dashboard-allproperties","/admin-dashboard-myproperties","/admin-dashboard-addproperty","/admin-dashboard-allcontacts","/admin-dashboard-allreviews","/admin-dashboard-featuredcities","/admin-dashboard-addfeaturedcity","/admin-dashboard-addservice","/admin-dashboard-allservices","/admin-dashboard-update-profile","/admin-dashboard-send-email","/admin-dashboard-change_password","/admin-dashboard-add_car","/admin-dashboard-allcars"];
+  const hideNavbarRoutes = ["/dashboard","/change_password","/create_Property","/agent-contacts","/dealers","/my-properties","/sellers","/agents_contact","/admin-dashboard","/admin-dashboard-allproperties","/admin-dashboard-myproperties","/admin-dashboard-addproperty","/admin-dashboard-allcontacts","/admin-dashboard-allreviews","/admin-dashboard-addservice","/admin-dashboard-allservices","/admin-dashboard-update-profile","/admin-dashboard-send-email","/admin-dashboard-change_password","/admin-dashboard-add_car","/admin-dashboard-allcars"];
   const dynamicRoutePatterns = [
     /^\/buyer-detail\/.+$/,
     /^\/update-property\/.+$/,
@@ -89,8 +87,6 @@ const App = () => {
         <Route path="/admin-dashboard-addproperty" element={<Admin_Add_Property/>}></Route>
         <Route path="/admin-dashboard-allcontacts" element={<All_Contacts/>}></Route>
         <Route path="/admin-dashboard-allreviews" element={<All_Reviews/>}></Route>
-        <Route path="/admin-dashboard-featuredcities" element={<All_FeaturedCities/>}></Route>
-        <Route path="/admin-dashboard-addfeaturedcity" element={<Add_Featured_Cities/>}></Route>
         <Route path="/admin-dashboard-allservices" element={<All_Services/>}></Route>
         <Route path="/admin-dashboard-addservice" element={<Add_Service/>}></Route>
         <Route path="/admin-dashboard-update-profile" element={<AdminProfileUpdate/>}></Route>

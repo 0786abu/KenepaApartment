@@ -69,25 +69,6 @@ const Admin_Side_Bar = ({ side,loading }) => {
                          </ul>
                      </div>
                  </li>
-                
-                <li className=" my-4">
-                   <div id="cc" className={`flex justify-between p-2 rounded-lg ${isactive===9 ? "text-blue-400" : "text-white"}`} onClick={()=>isopen(9)}>
-                   <div className=" flex justify-center  space-x-2">
-                        <Settings/> <p className=" cursor-pointer">Cities</p>
-                    </div>
-                    <div className="arrow">
-                        {/* {isopentoggle && isactive===1 ? <KeyboardArrowDownIcon/> : <KeyboardArrowRightIcon/>} */}
-                        
-                        <i className={ `fa-solid fa-chevron-up ${isopentoggle&&isactive===9 ? " rotate-180 duration-300":"rotate-90 duration-500"}`}></i>
-                    </div>
-                   </div>
-                    <div className={`submenu-wrapper ${isactive===9 && isopentoggle===true ? "colaps":"colapsd"}`}>
-                        <ul className="submenu text-start pl-8 border-l-2 mt-2">
-                        <li className="my-2"><Link to="/admin-dashboard-featuredcities">Featured Cities</Link></li>
-                        <li className="my-2"><Link to="/admin-dashboard-addfeaturedcity">Add City</Link></li>
-                        </ul>
-                    </div>
-                </li>
                 <li className=" my-4">
                    <div id="cc" className={`flex justify-between p-2 rounded-lg ${isactive===10 ? "text-blue-400" : "text-white"}`} onClick={()=>isopen(10)}>
                    <div className=" flex justify-center  space-x-2">

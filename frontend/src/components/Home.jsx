@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import Featured_listing from "./home/Featured_listing"
-import Property_By_Location from "./home/Property_by_location"
-import Services from "./home/Services"
+// import Services from "./home/Services"
 import Testimonial from "./home/Testimonial"
 import { useEffect } from "react"
 import { Fetch_Retal_Cars } from "../redux/action/carAction"
@@ -17,12 +16,9 @@ const Home = () => {
   return (
     <div>
         <Hero_Section/>
-        <div className="mt-16 md:mt-20">
+        {/* <div className="mt-16 md:mt-20">
           <Services/>
-        </div>
-        <div className="">
-          <Property_By_Location/>
-        </div>
+        </div> */}
         <div className="">
           <Featured_listing/>
         </div>
