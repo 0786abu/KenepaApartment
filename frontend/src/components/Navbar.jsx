@@ -118,7 +118,7 @@ const MobileMenu = ({ items, pathname, isOpen }) => {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-[113px] left-0 right-0 min-[850px]:hidden overflow-hidden bg-white shadow-lg z-50"
+          className="fixed top-[101px] z-[101] left-0 right-0 min-[850px]:hidden overflow-hidden bg-white shadow-lg"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {items.map((item, index) => (
