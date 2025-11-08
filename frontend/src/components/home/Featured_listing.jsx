@@ -8,13 +8,34 @@ import Loader from "../Loader";
 import { ExternalLink, Trash } from "lucide-react";
 
 const locations = [
-    "Beverly Hills Blvd",
-    "Ave, Manhattan",
-    "Miami",
-    "Houston",
-    "Chicago",
-    "San Francisco"
-]
+  "Amsterdam",       // Capital & most visited city
+  "Rotterdam",       // Major port city, modern architecture
+  "The Hague",       // Government & royal residence
+  "Utrecht",         // Central hub, canals & universities
+  "Eindhoven",       // Technology & innovation center (Philips HQ)
+  "Tilburg",         // Industrial & student city
+  "Groningen",       // Northern cultural & student city
+  "Maastricht",      // Historic city near Belgium border
+  "Breda",           // Southern vibrant city
+  "Nijmegen",        // Oldest city in Netherlands
+  "Leiden",          // University town near The Hague
+  "Delft",           // Famous for Delft Blue pottery
+  "Haarlem",         // Close to Amsterdam, great for living
+  "Amersfoort",      // Growing city, good housing demand
+  "Almere",          // Modern city near Amsterdam
+  "Arnhem",          // Cultural & nature-rich city
+  "Zwolle",          // Central charming city
+  "Den Bosch",       // Also called ’s-Hertogenbosch
+  "Leeuwarden",      // Friesland’s capital, cultural city
+  "Enschede",        // Near Germany, student hub
+  "Dordrecht",       // Historic port city
+  "Helmond",         // Developing tech city near Eindhoven
+  "Hoofddorp",       // Close to Schiphol Airport (business area)
+  "Zaandam",         // Industrial & residential near Amsterdam
+  "Apeldoorn",       // Green city with royal palace
+];
+
+
 const propertyDurations = [
     "Long-Term",
     "Short-Term"
@@ -41,7 +62,7 @@ const Featured_listing = () => {
   return (
     
     <div>
-        <div className="wrapper my-20">
+        <div className="wrapper my-8">
             <div className="header text-center">
             <h2 className=" px-4 py-1 bg-[#8FA282] inline-block rounded-full text-white">Properties</h2>
             <h2 className=" text-3xl md:text-4xl lg:text-5xl mt-4 font-[800]">Our Properties</h2>

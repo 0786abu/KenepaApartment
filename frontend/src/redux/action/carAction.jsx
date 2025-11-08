@@ -37,7 +37,7 @@ export const Fetch_Retal_Cars = (filters = {})=>async(dispatch)=>{
             },
             withCredentials:true
         });
-        dispatch(setFetchCars(data.cars));
+        dispatch(setFetchCars({cars:data.cars,allcars:data.allcars}));
     } catch (error) {
         toast.error(error.response?.data?.message || error?.response?.data?.error)
     }

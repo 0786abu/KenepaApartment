@@ -151,12 +151,14 @@ export const getAllCars = async (req, res) => {
 
     // 🧠 Fetch from DB with filter applied
     const cars = await Car.find(filter);
+    const allcars = await Car.countDocuments();
 
     // 🟢 Response
     res.status(200).json({
       success: true,
       count: cars.length,
       cars,
+      allcars
     });
   } catch (error) {
     console.error("Error fetching cars:", error);

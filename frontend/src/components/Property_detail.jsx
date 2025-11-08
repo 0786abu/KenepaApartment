@@ -1,4 +1,4 @@
-import { Bed, CalendarMonth, Chat,House, Place, Shower } from '@mui/icons-material'
+import { Bed, CalendarMonth, House, Place, Shower } from '@mui/icons-material'
 import {Link, useParams} from 'react-router-dom'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Fetch_Properties, Fetch_Property } from '../redux/action/propertyAction';
 import Loader from './Loader';
+import { Landmark } from 'lucide-react';
 
 
 const Property_detail = () => {
@@ -65,11 +66,10 @@ const Property_detail = () => {
                          <div className="grid-layout gap-2 mx-4 mt-20 mb-10">
                              <div className="sec-1 w-full">
                                <div className="wrapper">
-                                 <div className=' grid sm:grid-cols-4 grid-cols-2 gap-4 md:gap-8'>
-                                   {property?.featured===true && <p className=' px-4 py-1 font-[400] bg-[#8FA282] text-white inline-block'>Featured</p>}
-                                   <p className=' px-4 py-1 font-[400] bg-[#E8C696] text-white inline-block'>For {property?.category}</p>
-                                   <p className='text-font-[300] text-sm text-gray-500'><CalendarMonth sx={{color:"#ff5a3c"}}/> {property?.posteddate}</p>
-                                   <p className='text-font-[300] text-sm text-gray-500'><Chat sx={{color:"#ff5a3c"}}/> {property?.reviews?.length} Comments</p>
+                                 <div className=' grid sm:grid-cols-3 grid-cols-2 gap-4 md:gap-8'>
+                                   <p className=' px-4 py-1 font-[400] bg-[#E8C696] text-white inline-block'>For Rent</p>
+                                   <p className='text-font-[300] text-sm text-gray-500'><CalendarMonth sx={{color:"#E8C696"}}/> {property?.posteddate}</p>
+                                   <p className='text-font-[300] text-sm text-gray-500 flex items-center gap-1'><span><Landmark className='text-[#E8C696]'/></span> <span>{property?.location?.zipcode}</span></p>
                                  </div>
                                  <h2 className=' text-4xl font-[700] font-sans mt-8'>{property?.title}</h2>
                                   <p className=' font-[350] text-sm my-6 text-gray-600'><Place sx={{marginRight:"6px",color:"#8FA282"}}/> {property?.location?.address}</p>
@@ -114,11 +114,13 @@ const Property_detail = () => {
                                     return(
                                       <div key={index} className="card group shadow-md ">
                              <div className="img overflow-hidden">
-                                 <img src={`${import.meta.env.VITE_BASE_URL}${item.images[0]}`} className=' w-full group-hover:scale-110 duration-300 transition-all' alt="" />
+                                 <Link to={`/detail/${item._id}`}>
+                                   <img src={`${import.meta.env.VITE_BASE_URL}${item.images[0]}`} className=' w-full group-hover:scale-110 duration-300 transition-all' alt="" />
+                                 </Link>
                              </div>
                              <div className=' p-2 lg:p-6'>
                                  <p className=' text-xl font-[300] text-[#ff5a3c]'>For {item.category}</p>
-                                 <Link href={`/detail/${item._id}`}>
+                                 <Link to={`/detail/${item._id}`}>
                                  <h2 className='text-lg lg:text-2xl font-[700] mt-2 line-clamp-1 hover:text-[#ff5a3c] cursor-pointer'>{item.title}</h2>
                                  </Link>
                                  <p className=' font-[350] text-sm my-4 text-gray-600'><Place sx={{marginRight:"6px",color:"#ff5a3c"}}/> {item.location.address}</p>

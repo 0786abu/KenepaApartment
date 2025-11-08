@@ -8,13 +8,34 @@ import { ExternalLink, Trash } from "lucide-react";
 import { Fetch_Retal_Cars } from "../../redux/action/carAction";
 
 const locations = [
-    "Beverly Hills Blvd",
-    "Ave, Manhattan",
-    "Miami",
-    "Houston",
-    "Chicago",
-    "San Francisco"
-]
+  "Amsterdam",       // Capital & most visited city
+  "Rotterdam",       // Major port city, modern architecture
+  "The Hague",       // Government & royal residence
+  "Utrecht",         // Central hub, canals & universities
+  "Eindhoven",       // Technology & innovation center (Philips HQ)
+  "Tilburg",         // Industrial & student city
+  "Groningen",       // Northern cultural & student city
+  "Maastricht",      // Historic city near Belgium border
+  "Breda",           // Southern vibrant city
+  "Nijmegen",        // Oldest city in Netherlands
+  "Leiden",          // University town near The Hague
+  "Delft",           // Famous for Delft Blue pottery
+  "Haarlem",         // Close to Amsterdam, great for living
+  "Amersfoort",      // Growing city, good housing demand
+  "Almere",          // Modern city near Amsterdam
+  "Arnhem",          // Cultural & nature-rich city
+  "Zwolle",          // Central charming city
+  "Den Bosch",       // Also called ’s-Hertogenbosch
+  "Leeuwarden",      // Friesland’s capital, cultural city
+  "Enschede",        // Near Germany, student hub
+  "Dordrecht",       // Historic port city
+  "Helmond",         // Developing tech city near Eindhoven
+  "Hoofddorp",       // Close to Schiphol Airport (business area)
+  "Zaandam",         // Industrial & residential near Amsterdam
+  "Apeldoorn",       // Green city with royal palace
+];
+
+
 const carTypes = [
   "Sedan",
   "SUV",
@@ -147,7 +168,14 @@ const RentalCars = () => {
           </div>
           )}
             </div>
-           {carloading ? (<Loader/>):(
+           {carloading ? (<Loader/>): cars?.length===0 ? (
+            <div className="flex justify-center items-center h-[40vh]">
+              <div className=" flex flex-col gap-2 max-w-sm">
+                <h1>No Cars Found</h1>
+                <button onClick={clearFilter} className="p-2 rounded-full bg-[#8FA282]" title="Clear Filter">Clear Filter</button>
+              </div>
+            </div>
+           ) :(
              <div className="card-wrapper mx-4 mt-10">
              <div className=" cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
                  {cars?.slice(0,count).map((prop,index)=>{
@@ -166,7 +194,7 @@ const RentalCars = () => {
                     </Link>
                      <div className=" p-4">
                      <h2 className=' text-xl font-[700] font-sans text-[#8FA282]'>${`${prop.price} ${prop.category==="rent"? <span className=' font-[400] text-base'>/Month</span>:""}`}</h2>
-                         <h2 className=" text-xl font-[600] text-black my-3 line-clamp-1 font-sans">{prop.title}</h2>
+                         <h2 className=" text-xl font-[600] text-black my-3 line-clamp-1 font-sans">{prop.carName}</h2>
                          <p className=" text-gray-500 font-[300] text-[16px] line-clamp-1 font-sans mt-2">{prop.description}</p>
                          <hr />
                          <div className=" flex justify-between items-center mx-2 mt-4">

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 import { Fetch_Retal_Car, Fetch_Retal_Cars } from '../redux/action/carAction';
+import { Landmark } from 'lucide-react';
 
 
 const CarDetail = () => {
@@ -66,9 +67,10 @@ const CarDetail = () => {
                          <div className="grid-layout gap-2 mx-4 mt-20 mb-10">
                              <div className="sec-1 w-full">
                                <div className="wrapper">
-                                 <div className=' grid sm:grid-cols-4 grid-cols-2 gap-4 md:gap-8'>
+                                 <div className=' grid sm:grid-cols-3 grid-cols-2 gap-4 md:gap-8'>
                                    <p className=' px-4 py-1 font-[400] bg-[#E8C696] text-white inline-block'>For Rent</p>
                                    <p className=' px-4 py-1 font-[400] bg-[#8FA282] text-white inline-block'>Price: ${car?.price}</p>
+                                   <p className='text-font-[300] bg-[#E8C696] text-sm text-white flex items-center gap-1'><span><Landmark className=''/></span> <span>{car?.location?.zipcode}</span></p>
                                  </div>
                                  <h2 className=' text-4xl font-[700] font-sans mt-8'>{car?.carName}</h2>
                                   <p className=' font-[350] text-sm my-6 text-gray-600'><Place sx={{marginRight:"6px",color:"#8FA282"}}/> {car?.location?.address}</p>
@@ -97,12 +99,14 @@ const CarDetail = () => {
                                     return(
                                       <div key={index} className="card group shadow-md ">
                              <div className="img overflow-hidden">
-                                 <img src={`${import.meta.env.VITE_BASE_URL}${item.images[0]}`} className=' w-full group-hover:scale-110 duration-300 transition-all' alt="" />
+                                 <Link to={`/car/${item._id}`}>
+                                   <img src={`${import.meta.env.VITE_BASE_URL}${item.images[0]}`} className=' w-full group-hover:scale-110 duration-300 transition-all' alt="" />
+                                 </Link>
                              </div>
                              <div className=' p-2 lg:p-6'>
                                  <p className=' text-xl font-[300] text-[#ff5a3c]'>For Rent</p>
-                                 <Link href={`/car/${item._id}`}>
-                                 <h2 className='text-lg lg:text-2xl font-[700] mt-2 line-clamp-1 hover:text-[#ff5a3c] cursor-pointer'>{item.title}</h2>
+                                 <Link to={`/car/${item._id}`}>
+                                 <h2 className='text-lg lg:text-2xl font-[700] mt-2 line-clamp-1 hover:text-[#ff5a3c] cursor-pointer'>{item.carName}</h2>
                                  </Link>
                                  <p className=' font-[350] text-sm my-4 text-gray-600'><Place sx={{marginRight:"6px",color:"#ff5a3c"}}/> {item.location.address}</p>
                                  <hr className=' my-6'/>

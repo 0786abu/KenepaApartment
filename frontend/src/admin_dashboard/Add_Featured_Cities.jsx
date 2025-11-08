@@ -7,7 +7,34 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Create_FeaturedCity } from '../redux/action/CityAction';
 // import { setCreateCityloading } from '../redux/slice/Featured_CitySlice';
-const cities = ['New York City','Beverly Hills Blvd','Ave, Manhattan', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Charlotte', 'San Francisco', 'Indianapolis', 'Seattle', 'Denver', 'Washington D.C.', 'Boston', 'El Paso', 'Nashville', 'Detroit', 'Oklahoma City', 'Portland', 'Las Vegas', 'Memphis', 'Louisville', 'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Sacramento', 'Kansas City', 'Mesa', 'Atlanta', 'Long Beach', 'Colorado Springs', 'Raleigh', 'Miami', 'Virginia Beach', 'Omaha', 'Oakland', 'Minneapolis', 'Tulsa', 'Arlington', 'New Orleans', 'Wichita', 'Cleveland', 'Bakersfield', 'Tampa', 'Honolulu', 'Anaheim', 'Santa Ana', 'Corpus Christi', 'Riverside', 'Lexington', 'St. Louis', 'Stockton', 'Pittsburgh', 'Saint Paul', 'Cincinnati', 'Anchorage', 'Henderson', 'Greensboro', 'Plano', 'Newark', 'Lincoln', 'Toledo', 'Orlando', 'Chula Vista', 'Buffalo', 'Jersey City', 'Fort Wayne', 'Chandler', 'Madison', 'Lubbock', 'Scottsdale', 'Reno', 'Glendale', 'Norfolk', 'Birmingham', 'San Bernardino', 'Spokane', 'Rochester', 'Des Moines', 'Modesto', 'Fayetteville', 'Shreveport', 'Akron', 'Tacoma', 'Aurora', 'Montgomery', 'Little Rock', 'Columbia', 'Huntsville', 'Grand Rapids', 'Salt Lake City', 'Baton Rouge', 'St. Petersburg', 'Laredo', 'Hillsboro', 'Tallahassee', 'Visalia', 'Wilmington', 'West Valley City', 'Pearland', 'Murrieta', 'Round Rock', 'Blacksburg', 'Port St. Lucie', 'Killeen']
+const cities = [
+  "Amsterdam",       // Capital & most visited city
+  "Rotterdam",       // Major port city, modern architecture
+  "The Hague",       // Government & royal residence
+  "Utrecht",         // Central hub, canals & universities
+  "Eindhoven",       // Technology & innovation center (Philips HQ)
+  "Tilburg",         // Industrial & student city
+  "Groningen",       // Northern cultural & student city
+  "Maastricht",      // Historic city near Belgium border
+  "Breda",           // Southern vibrant city
+  "Nijmegen",        // Oldest city in Netherlands
+  "Leiden",          // University town near The Hague
+  "Delft",           // Famous for Delft Blue pottery
+  "Haarlem",         // Close to Amsterdam, great for living
+  "Amersfoort",      // Growing city, good housing demand
+  "Almere",          // Modern city near Amsterdam
+  "Arnhem",          // Cultural & nature-rich city
+  "Zwolle",          // Central charming city
+  "Den Bosch",       // Also called ’s-Hertogenbosch
+  "Leeuwarden",      // Friesland’s capital, cultural city
+  "Enschede",        // Near Germany, student hub
+  "Dordrecht",       // Historic port city
+  "Helmond",         // Developing tech city near Eindhoven
+  "Hoofddorp",       // Close to Schiphol Airport (business area)
+  "Zaandam",         // Industrial & residential near Amsterdam
+  "Apeldoorn",       // Green city with royal palace
+];
+
 
 
 const Add_Featured_Cities = () => {

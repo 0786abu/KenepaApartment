@@ -10,9 +10,48 @@ import { Fetch_Property, Update_Propertyy } from '../../redux/action/propertyAct
 import { useNavigate, useParams } from 'react-router-dom';
 import Admin_Side_Bar from '../../admin_dashboard/Admin_sidebar';
 
-const cities = ['New York City','Beverly Hills Blvd','Ave, Manhattan', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Charlotte', 'San Francisco', 'Indianapolis', 'Seattle', 'Denver', 'Washington D.C.', 'Boston', 'El Paso', 'Nashville', 'Detroit', 'Oklahoma City', 'Portland', 'Las Vegas', 'Memphis', 'Louisville', 'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Sacramento', 'Kansas City', 'Mesa', 'Atlanta', 'Long Beach', 'Colorado Springs', 'Raleigh', 'Miami', 'Virginia Beach', 'Omaha', 'Oakland', 'Minneapolis', 'Tulsa', 'Arlington', 'New Orleans', 'Wichita', 'Cleveland', 'Bakersfield', 'Tampa', 'Honolulu', 'Anaheim', 'Santa Ana', 'Corpus Christi', 'Riverside', 'Lexington', 'St. Louis', 'Stockton', 'Pittsburgh', 'Saint Paul', 'Cincinnati', 'Anchorage', 'Henderson', 'Greensboro', 'Plano', 'Newark', 'Lincoln', 'Toledo', 'Orlando', 'Chula Vista', 'Buffalo', 'Jersey City', 'Fort Wayne', 'Chandler', 'Madison', 'Lubbock', 'Scottsdale', 'Reno', 'Glendale', 'Norfolk', 'Birmingham', 'San Bernardino', 'Spokane', 'Rochester', 'Des Moines', 'Modesto', 'Fayetteville', 'Shreveport', 'Akron', 'Tacoma', 'Aurora', 'Montgomery', 'Little Rock', 'Columbia', 'Huntsville', 'Grand Rapids', 'Salt Lake City', 'Baton Rouge', 'St. Petersburg', 'Laredo', 'Hillsboro', 'Tallahassee', 'Visalia', 'Wilmington', 'West Valley City', 'Pearland', 'Murrieta', 'Round Rock', 'Blacksburg', 'Port St. Lucie', 'Killeen']
 
-const states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+const cities = [
+  "Amsterdam",       // Capital & most visited city
+  "Rotterdam",       // Major port city, modern architecture
+  "The Hague",       // Government & royal residence
+  "Utrecht",         // Central hub, canals & universities
+  "Eindhoven",       // Technology & innovation center (Philips HQ)
+  "Tilburg",         // Industrial & student city
+  "Groningen",       // Northern cultural & student city
+  "Maastricht",      // Historic city near Belgium border
+  "Breda",           // Southern vibrant city
+  "Nijmegen",        // Oldest city in Netherlands
+  "Leiden",          // University town near The Hague
+  "Delft",           // Famous for Delft Blue pottery
+  "Haarlem",         // Close to Amsterdam, great for living
+  "Amersfoort",      // Growing city, good housing demand
+  "Almere",          // Modern city near Amsterdam
+  "Arnhem",          // Cultural & nature-rich city
+  "Zwolle",          // Central charming city
+  "Den Bosch",       // Also called ’s-Hertogenbosch
+  "Leeuwarden",      // Friesland’s capital, cultural city
+  "Enschede",        // Near Germany, student hub
+  "Dordrecht",       // Historic port city
+  "Helmond",         // Developing tech city near Eindhoven
+  "Hoofddorp",       // Close to Schiphol Airport (business area)
+  "Zaandam",         // Industrial & residential near Amsterdam
+  "Apeldoorn",       // Green city with royal palace
+];
+
+
+const states = [ "Drenthe",
+  "Flevoland",
+  "Friesland",
+  "Gelderland",
+  "Groningen",
+  "Limburg",
+  "Noord-Brabant",
+  "Noord-Holland",
+  "Overijssel",
+  "Utrecht",
+  "Zeeland",
+  "Zuid-Holland",]
 
 const property_types = [
     "Single House",
@@ -217,22 +256,22 @@ const Update_Property = () => {
           }
         name="country" id="" className="w-full bg-gray-100 h-12 border outline-none rounded-sm border-gray-50">
             <option value="">Select Country</option>
-            <option value="america">America</option>
+            <option value="netherland">Netherland</option>
         </select>
       </div>
      <div>
      <label className=' text-lg font-[600] font-sans mb-2'>zipcode</label>
      <input
-  type="number"
+  type="text"
   name="zipcode"
   value={propertyData.location.zipcode}
   onChange={(e) =>
     setPropertyData((prev) => ({
       ...prev,
-      location: { ...prev.location, zipcode: e.target.value ? parseInt(e.target.value, 10) : ""},
+      location: { ...prev.location, zipcode:e.target.value},
     }))
   }
-  placeholder="Enter zipcode"
+  placeholder="Enter area-name/address-line"
   className="px-4 py-3 bg-gray-100 focus:bg-transparent w-full text-sm outline-[#333] rounded-sm transition-all"
   required
 />

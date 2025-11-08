@@ -50,7 +50,7 @@ const Contact = () => {
                             <div className=" text-center my-6"><PinDrop sx={{fontSize:"80px",color:"#8FA282"}}/></div>
                             <div className=" text-center">
                                 <h2 className="text-2xl font-[700]">Address</h2>
-                                <p className=" text-gray-500 text-lg font-[350] font-sans mt-4">Almere </p>
+                                <p className=" text-gray-500 text-lg font-[350] font-sans mt-4">Kenepaweg 15, Curaçao. </p>
                             </div>
                         </div>
                     </div>

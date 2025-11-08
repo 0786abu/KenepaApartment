@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     cars:[],
+    totalCars:null,
     car:null,
     createcarloading:false,
     carloading:false,
@@ -22,7 +23,8 @@ const carSlice = createSlice({
         },
         setFetchCars:(state,action)=>{
             state.carloading = false,
-            state.cars = action.payload
+            state.cars = action.payload.cars
+            state.totalCars = action.payload.allcars
         },
         setCarLoading:(state)=>{
             state.carloading = true

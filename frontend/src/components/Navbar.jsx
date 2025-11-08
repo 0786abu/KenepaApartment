@@ -21,6 +21,7 @@ const navItems = [
     title: 'Services',
     href: '/services',
   },
+  { title: 'Car Rental', href: '/car-rental' },
   { title: 'Contact', href: '/contact' },
 ]
 
@@ -48,7 +49,7 @@ const DropdownMenu = ({ items }) => {
   )
 }
 
-const MobileMenuItem = ({ item, pathname }) => {
+const MobileMenuItem = ({ item, pathname, setClose }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -72,6 +73,7 @@ const MobileMenuItem = ({ item, pathname }) => {
           </button>
         ) : (
           <Link
+          onClick={()=>setClose(false)}
             to={item.href}
             className={`block px-4 py-3 rounded-lg text-base font-medium transition duration-150 ease-in-out ${
               pathname === item.href
@@ -109,7 +111,7 @@ const MobileMenuItem = ({ item, pathname }) => {
   )
 }
 
-const MobileMenu = ({ items, pathname, isOpen }) => {
+const MobileMenu = ({ items, pathname, isOpen, setClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -122,7 +124,7 @@ const MobileMenu = ({ items, pathname, isOpen }) => {
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {items.map((item, index) => (
-              <MobileMenuItem key={index} item={item} pathname={pathname} />
+              <MobileMenuItem key={index} item={item}  pathname={pathname} setClose={setClose}/>
             ))}
           </div>
         </motion.div>
@@ -380,7 +382,7 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
-      <MobileMenu items={navItems} pathname={pathname} isOpen={isMobileMenuOpen} />
+      <MobileMenu items={navItems} pathname={pathname} isOpen={isMobileMenuOpen} setClose={setIsMobileMenuOpen} />
     </>
   )
 }

@@ -31,6 +31,7 @@ import Admin_Add_Car from "./admin_dashboard/Admin_Add_Car"
 import Admin_All_Cars from "./admin_dashboard/Admin_All_Cars"
 import Admin_Update_Car from "./admin_dashboard/ADmin_UPdate_Car"
 import CarDetail from "./components/CarDetail"
+import CarRentalServices from "./components/CarRentalServices"
 const App = () => {
   const location = useLocation();
     
@@ -76,6 +77,7 @@ const App = () => {
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/create-review" element={<CreateReview/>}></Route>
+        <Route path="/car-rental" element={<CarRentalServices/>}></Route>
 
         {/* Dashboard */}
         
