@@ -13,7 +13,9 @@ const navItems = [
     title: 'Home',
     href: '/',
   },
-  { title: 'Car Rental', href: '/car-rental' },
+  { title: 'Onze missie', href: '/our-mission' },
+  { title: 'Veel gestelde vragen', href: '/FAQ' },
+  { title: 'Onze appartementen', href: '/onze-appartementen' },
   { title: 'Contact', href: '/contact' },
 ]
 
@@ -112,7 +114,7 @@ const MobileMenu = ({ items, pathname, isOpen, setClose }) => {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-[101px] z-[101] left-0 right-0 min-[850px]:hidden overflow-hidden bg-white shadow-lg"
+          className="fixed top-[101px] z-[101] left-0 right-0 min-[900px]:hidden overflow-hidden bg-white shadow-lg"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {items.map((item, index) => (
@@ -260,7 +262,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Nav */}
-            <div className="hidden min-[850px]:flex items-center space-x-8 ml-10">
+            <div className="hidden min-[900px]:flex items-center space-x-4 ml-10">
               {navItems.map((item, index) => (
                 <div key={index} className="relative">
                   {item.dropdownItems ? (
@@ -320,7 +322,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Actions */}
-            <div className="min-[850px]:hidden flex items-center space-x-3">
+            <div className="min-[900px]:hidden flex items-center space-x-3">
               {user?.role==="admin" && (
                 <UserDropdown
                   user={user}
@@ -370,7 +372,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 min-[850px]:hidden bg-black/50 z-40"
+          className="fixed inset-0 min-[900px]:hidden bg-black/50 z-40"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
 import Featured_listing from "./home/Featured_listing"
-import Testimonial from "./home/Testimonial"
 import { useEffect } from "react"
 import { Fetch_Retal_Cars } from "../redux/action/carAction"
 import RentalCars from "./home/RentalCars"
 import Hero_Section from "./home/Hero_Section"
+import WelcomeSection from "./home/Welcome"
+import { FeaturesSection } from "./home/Features"
+import { CTASection } from "./home/CTASection"
 
 const Home = () => {
   const {totalCars} = useSelector((state)=>state.Car);
@@ -15,17 +17,13 @@ const Home = () => {
   return (
     <div>
         <Hero_Section/>
-        <div className="">
+        <WelcomeSection/>
           <Featured_listing/>
-        </div>
         {totalCars && totalCars>0 && (
-          <div className="">
           <RentalCars/>
-        </div>
         )}
-        <div className="">
-          <Testimonial/>
-        </div>
+        <FeaturesSection/>
+        <CTASection/>
     </div>
   )
 }

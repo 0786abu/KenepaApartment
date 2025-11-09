@@ -3,7 +3,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Fence, HandCoins, Settings } from 'lucide-react';
-import { LogoutOutlined, Reviews } from '@mui/icons-material';
+import { LogoutOutlined } from '@mui/icons-material';
 import { useDispatch } from 'react-redux';
 import { LogoutUser } from '../redux/action/userAction';
 
@@ -75,13 +75,6 @@ const Admin_Side_Bar = ({ side,loading }) => {
                         <HandCoins/> <p className=" cursor-pointer">Contacts</p>
                     </div>
                   </Link>
-                </li>
-                <li id="cc" className={`flex justify-between p-2 rounded-lg my-4 ${isactive===6 ? "activ" : ""}`} onClick={()=>isopen(6)}>
-                  <Link to='/admin-dashboard-allreviews'>
-                  <div className=" flex items-center space-x-2">
-                        <p><Reviews/></p> <p className=" cursor-pointer">Customer reviews</p>
-                    </div>
-                        </Link>
                 </li>
                 <li className=" my-4">
                    <div id="cc" className={`flex justify-between p-2 rounded-lg ${isactive===5 ? "text-blue-400" : "text-white"}`} onClick={()=>isopen(5)}>

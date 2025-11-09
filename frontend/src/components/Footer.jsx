@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
     <div>
-       <footer className="w-full py-14 bg-black text-white">
+       <footer className="w-full py-8 bg-black text-white">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="max-w-3xl mx-auto">
       <div className="flex justify-center items-center gap-2">
@@ -18,7 +18,9 @@ const Footer = () => {
       </div>
       <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
         <li><Link to="/" className="hover:text-[#A0B591]">Home</Link></li>
-        <li><Link to="/car-rental" className="hover:text-[#A0B591] ">Car Rental</Link></li>
+        <li><Link to="/our-mission" className="hover:text-[#A0B591] ">Onze missie</Link></li>
+        <li><Link to="/FAQ" className="hover:text-[#A0B591] ">Veel gestelde vragen</Link></li>
+        <li><Link to='/onze-appartementen' className="hover:text-[#A0B591] ">Onze appartementen</Link></li>
         <li><Link to="/contact" className="hover:text-[#A0B591] ">Contact Us</Link></li>
       </ul>
       <div className="flex space-x-10 justify-center items-center mb-14">

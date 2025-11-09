@@ -9,7 +9,6 @@ import { fileURLToPath } from "url";
 import cookieParser from 'cookie-parser';
 import PropertyRouter from './router/propertyRouter.js';
 import ContactRouter from './router/contactRouter.js';
-import ReviewRouter from './router/reviewRouter.js';
 import path from 'path';
 import carRouter from './router/carRouter.js';
 
@@ -18,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ["https://kenepaapartment.com"],
+  origin: ["https://kenepaapartment.com","http://localhost:5173"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With', 'Accept'],
   methods: ["GET", "POST", "PUT", "DELETE"]
@@ -32,7 +31,6 @@ app.use(express.urlencoded({ limit: "20mb", extended: true }));
 app.use("/user",UserRouter)
 app.use("/property",PropertyRouter)
 app.use("/contact",ContactRouter)
-app.use("/review",ReviewRouter)
 app.use("/car",carRouter)
 
 
