@@ -76,7 +76,7 @@ const property_types = [
     "Industrial Unit"
 ];
 
-const propertyDurations = ["Long-Term","Short-Term"]
+const propertyDurations = ["Short-Term", "Mid-Term", "Long-Term"]
 
 
 
@@ -88,6 +88,8 @@ const Update_Property = () => {
     const {user,actionloading} = useSelector((state)=>state.User);
     const {createloading,property} = useSelector((state)=>state.Property);
     const [newAmenity, setNewAmenity] = useState('' );
+    const [newDate, setNewDate] = useState('' );
+    const [isBooked, setIsBooked] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [property_detail, setProperty_detail] = useState('');
@@ -107,6 +109,7 @@ const Update_Property = () => {
         size:Number,
         price:Number,
         amenities:[],
+        availabilities:[],
         google_map_link:"",
         category:"",
         years_of_build:Number
@@ -137,6 +140,35 @@ const Update_Property = () => {
           amenities: prev.amenities.filter((_, i) => i !== index),
         }));
       };
+      const addAvailableDate = () => {
+        if (newDate === "") {
+          toast.error("Please enter a date");
+          return;
+        }
+      
+        const newAvailability = {
+          date: newDate.trim(),
+          isBooked: isBooked, // 👈 use current checkbox value
+        };
+      
+        setPropertyData((prev) => ({
+          ...prev,
+          availabilities: [...prev.availabilities, newAvailability],
+        }));
+      
+        // clear inputs
+        setNewDate("");
+        setIsBooked(false);
+      };
+          
+            // Function to remove an amenity
+            const removeAvailableDate = (index) => {
+              setPropertyData((prev) => ({
+                ...prev,
+                availabilities: prev.availabilities.filter((_, i) => i !== index),
+              }));
+            };
+      
 
       useEffect(()=>{
         dispatch(Fetch_Property(id))
@@ -161,6 +193,7 @@ const Update_Property = () => {
               size: property?.size,
               price: property?.price,
               amenities: property?.amenities,
+              availabilities: property?.availabilities,
               google_map_link: property?.google_map_link,
               category: property?.category,
               years_of_build: property?.years_of_build,
@@ -381,7 +414,7 @@ const Update_Property = () => {
         name="state" id="" className="w-full bg-gray-100 h-12 border outline-none rounded-sm border-gray-50">
             <option value="">Property Type</option>
             {propertyDurations.map((property,index)=>{
-                return <option key={index} value={property}>{property}</option>
+                return <option key={index} value={property}>{property==="Short-Term" ? "3-Days" : property==="Mid-Term" ? "1-Month" : "1-Year"}</option>
             })}
         </select>
       </div>
@@ -416,6 +449,59 @@ const Update_Property = () => {
                     <button
                       type="button"
                       onClick={() => removeAmenity(index)}
+                      className="bg-red-500 text-white px-2 py-1 rounded"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 w-full sm:w-[60%] mx-auto my-4 border p-4">
+              <label className="block font-semibold mb-2">Add Current Month data with Booked Dates</label>
+              <div className="flex items-center gap-2 mb-3">
+    {/* Date input */}
+    <input
+      type="text"
+      value={newDate}
+      onChange={(e) => setNewDate(e.target.value)}
+      placeholder="Enter Date (e.g. 09 Nov, 2025)"
+      className="px-4 py-2 bg-gray-100 w-full text-sm outline-none rounded"
+    />
+
+    {/* Booked checkbox */}
+    <label className="flex items-center gap-2">
+      <input
+        type="checkbox"
+        checked={isBooked}
+        className='w-3 h-3'
+        onChange={(e) => setIsBooked(e.target.checked)}
+      />
+      <span>Booked?</span>
+    </label>
+
+    {/* Add button */}
+    <button
+      type="button"
+      onClick={addAvailableDate}
+      className="px-4 py-2 bg-gray-800 text-white rounded"
+    >
+      Add
+    </button>
+  </div>
+
+              {/* Display Selected Amenities */}
+              <div className="mt-2">
+                {propertyData.availabilities.map((newDate, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center bg-gray-200 p-2 rounded mt-2"
+                  >
+                    <span>{newDate.date}</span>
+                    <span>{newDate.isBooked === true ? "Booked" : "Available"}</span>
+                    <button
+                      type="button"
+                      onClick={() =>removeAvailableDate(index)}
                       className="bg-red-500 text-white px-2 py-1 rounded"
                     >
                       Remove

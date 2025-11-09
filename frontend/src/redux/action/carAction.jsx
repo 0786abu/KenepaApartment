@@ -26,11 +26,13 @@ export const Create_Car = (car)=>async(dispatch)=>{
 export const Fetch_Retal_Cars = (filters = {})=>async(dispatch)=>{
     dispatch(setCarLoading())
     try {
-        const { address, carType, carModel } = filters;
+        const { address, carType, carModel ,minPrice, maxPrice } = filters;
         const queryParams = new URLSearchParams();
         if(address) queryParams.append("address", address);
         if(carType) queryParams.append("carType", carType);
         if(carModel) queryParams.append("carModel", carModel);
+        if(minPrice) queryParams.append("minPrice", minPrice);
+        if(maxPrice) queryParams.append("maxPrice", maxPrice);
         const {data} = await axios.get(`${API_BASE_URL}/car/cars?${queryParams.toString()}`,{
             headers:{
                 "Content-Type":"application/json"

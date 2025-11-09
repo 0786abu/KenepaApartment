@@ -131,7 +131,7 @@ export const deleteCar = async (req, res) => {
 
 export const getAllCars = async (req, res) => {
   try {
-    const { address, carType, carModel } = req.query;
+    const { address, carType, carModel, minPrice, maxPrice } = req.query;
 
     // 🧩 Start with base filter
     const filter = { isavailable: true };
@@ -148,6 +148,14 @@ export const getAllCars = async (req, res) => {
     if (carModel) {
       filter.carModel = carModel;
     }
+       if (minPrice && maxPrice) {
+      filter.price = { $gte: minPrice, $lte: maxPrice };
+    } else if (minPrice) {
+      filter.price = { $gte: minPrice };
+    } else if (maxPrice) {
+      filter.price = { $lte: maxPrice };
+    }
+        
 
     // 🧠 Fetch from DB with filter applied
     const cars = await Car.find(filter);

@@ -23,7 +23,7 @@ export const Property_create = async (req, res) => {
       bathrooms,
       years_of_build,
       posteddate,
-      propertyDuration,
+      propertyDuration
     } = req.body;
 
     // ✅ Generate unique Property ID
@@ -43,6 +43,7 @@ export const Property_create = async (req, res) => {
         message: "Please add property images",
       });
     }
+    const availabilities = JSON.parse(req.body.availabilities);
 
     // ✅ Generate uploaded image URLs (from multer)
     const images = req.files.map((file) => `/uploads/${file.filename}`);
@@ -97,6 +98,7 @@ export const Property_create = async (req, res) => {
       property_detail,
       posteddate,
       propertyDuration,
+      availabilities
     });
 
     return res.status(201).json({
@@ -115,7 +117,7 @@ export const Property_create = async (req, res) => {
 
 export const Fetch_Properties = async (req, res) => {
     try {
-        const { category, address, propertyDuration, property_type, amenities } = req.query;
+        const { category, address, propertyDuration, property_type, amenities, minPrice, maxPrice } = req.query;
         
         let filter = {isavailable:true};
         
@@ -137,6 +139,13 @@ export const Fetch_Properties = async (req, res) => {
                 $all: amenitiesArray.map(amenity => new RegExp(`^${amenity}$`, "i")) 
             };
         }
+         if (minPrice && maxPrice) {
+      filter.price = { $gte: minPrice, $lte: maxPrice };
+    } else if (minPrice) {
+      filter.price = { $gte: minPrice };
+    } else if (maxPrice) {
+      filter.price = { $lte: maxPrice };
+    }
         
         
         const properties = await Property.find(filter);
@@ -257,11 +266,17 @@ export const Create_rating = async (req, res) => {
 export const Update_Property = async(req, res) => {
     try {
         const {
-            title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration
+            title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration, availabilities
         } = req.body;
         const { id } = req.params;
+        if(!id){
+            return res.status(404).json({
+                success: false,
+                message: "Property not found"
+            });
+        }
         
-        const property = await Property.findByIdAndUpdate(id,{title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration},{new:true});
+        const property = await Property.findByIdAndUpdate(id,{title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration, availabilities},{new:true});
         
         res.status(200).json({
             success: true,

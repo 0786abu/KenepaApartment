@@ -72,6 +72,12 @@ const propertyschema = new Schema({
         type: Number,
         required: true
     },
+    availabilities:[
+        {
+            date:String,
+            isBooked:Boolean
+        }
+    ],
     images:[
         {
             type: String,
@@ -118,6 +124,7 @@ const propertyschema = new Schema({
             required: true
         }
     },
+
     years_of_build:{
         type: Number,
         required: true

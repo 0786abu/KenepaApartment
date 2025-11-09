@@ -1,63 +1,20 @@
 import { BathtubOutlined, BedOutlined, DisabledByDefault, LocationOnOutlined } from "@mui/icons-material"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Fetch_Properties } from "../../redux/action/propertyAction";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Loader from "../Loader";
-import { ExternalLink, Trash } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
-const locations = [
-  "Amsterdam",       // Capital & most visited city
-  "Rotterdam",       // Major port city, modern architecture
-  "The Hague",       // Government & royal residence
-  "Utrecht",         // Central hub, canals & universities
-  "Eindhoven",       // Technology & innovation center (Philips HQ)
-  "Tilburg",         // Industrial & student city
-  "Groningen",       // Northern cultural & student city
-  "Maastricht",      // Historic city near Belgium border
-  "Breda",           // Southern vibrant city
-  "Nijmegen",        // Oldest city in Netherlands
-  "Leiden",          // University town near The Hague
-  "Delft",           // Famous for Delft Blue pottery
-  "Haarlem",         // Close to Amsterdam, great for living
-  "Amersfoort",      // Growing city, good housing demand
-  "Almere",          // Modern city near Amsterdam
-  "Arnhem",          // Cultural & nature-rich city
-  "Zwolle",          // Central charming city
-  "Den Bosch",       // Also called ’s-Hertogenbosch
-  "Leeuwarden",      // Friesland’s capital, cultural city
-  "Enschede",        // Near Germany, student hub
-  "Dordrecht",       // Historic port city
-  "Helmond",         // Developing tech city near Eindhoven
-  "Hoofddorp",       // Close to Schiphol Airport (business area)
-  "Zaandam",         // Industrial & residential near Amsterdam
-  "Apeldoorn",       // Green city with royal palace
-];
-
-
-const propertyDurations = [
-    "Long-Term",
-    "Short-Term"
-]
 const Featured_listing = () => {
     const {properties,propertyloading} = useSelector((state)=>state.Property);
     const dispatch = useDispatch();
-    const [address, setAddress] = useState("");
-    const [propertyDuration, setPropertyDuration] = useState("");
-    const [count, setCount] = useState(9)
 
     useEffect(()=>{
-        dispatch(Fetch_Properties({address,propertyDuration}))
-    },[dispatch,address,propertyDuration])
+        dispatch(Fetch_Properties())
+    },[dispatch])
 
-    const clearFilter = ()=>{
-        setAddress("");
-        setPropertyDuration("")
-    }
-    const seeMoreHandle = ()=>{
-        setCount(prev=>prev+6)
-    }
         
   return (
     
@@ -67,62 +24,10 @@ const Featured_listing = () => {
             <h2 className=" px-4 py-1 bg-[#8FA282] inline-block rounded-full text-white">Properties</h2>
             <h2 className=" text-3xl md:text-4xl lg:text-5xl mt-4 font-[800]">Our Properties</h2>
             </div>
-            <div className="max-w-sm grid grid-cols-10 gap-2 m-auto my-4">
-                <div className="relative col-span-4">
-            <select
-              aria-label="Location or City"
-              className="appearance-none w-full bg-white border border-gray-200 rounded-lg py-2.5 px-3 pr-10 text-gray-800 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition"
-              defaultValue=""
-              value={address}
-              onChange={(e)=>setAddress(e.target.value)}
-            >
-              <option value="" disabled>Choose city</option>
-              {locations.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-
-            {/* chevron icon */}
-            <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center">
-              <svg className="w-4 h-4 text-gray-400" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-                <div className="relative col-span-4">
-            <select
-              aria-label="Location or City"
-              className="appearance-none w-full bg-white border border-gray-200 rounded-lg py-2.5 px-3 pr-10 text-gray-800 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition"
-              value={propertyDuration}
-              onChange={(e)=>setPropertyDuration(e.target.value)}
-            >
-              <option value="" disabled>Duration</option>
-              {propertyDurations.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-
-            {/* chevron icon */}
-            <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center">
-              <svg className="w-4 h-4 text-gray-400" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-          {(address || propertyDuration) && (
-            <div className="col-span-2">
-            <button onClick={clearFilter} className="p-2 rounded-full bg-[#8FA282]" title="Clear Filter"><Trash className="text-white"/></button>
-          </div>
-          )}
-            </div>
            {propertyloading ? (<Loader/>):(
              <div className="card-wrapper mx-4 mt-10">
              <div className=" cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                 {properties?.slice(0,count).map((prop,index)=>{
+                 {properties?.slice(0,6).map((prop,index)=>{
                      return(
                          <div data-aos="fade-down"  data-aos-delay={`${index*100}`} data-aos-duration="1000" key={index} className="card group overflow-hidden border-gray-200 border">
                     <Link to={`/detail/${prop._id}`}>
@@ -132,13 +37,13 @@ const Featured_listing = () => {
                          <p className=" text-white"><LocationOnOutlined/> {prop.location.address}</p>
                      </div>
                      <div className=" absolute bg-[#8FA282] px-3 text-sm py-1 rounded-full top-2 left-2">
-                        <span>{prop.propertyDuration==="Short-Term" ? "Per Night" : "Monthly"}</span>
+                        <span>{prop.propertyDuration==="Short-Term" ? "3 Days" : prop.propertyDuration==="Mid-Term" ? "1-Month" : "1-Year"}</span>
                      </div>
                      </div>
                     </Link>
 
                      <div className=" p-4">
-                     <h2 className=' text-xl font-[700] font-sans text-[#8FA282]'>${`${prop.price} ${prop.category==="rent"? <span className=' font-[400] text-base'>/Month</span>:""}`}</h2>
+                     <h2 className=' text-xl font-[700] font-sans text-[#8FA282]'>${`${prop.price} For Rent`}</h2>
                          <h2 className=" text-xl font-[600] text-black my-3 line-clamp-1 font-sans">{prop.title}</h2>
                          <p className=" text-gray-500 font-[300] text-[16px] line-clamp-1 font-sans mt-2">{prop.description}</p>
                          <div className=" mt-6 grid grid-cols-3 pb-4">
@@ -175,25 +80,17 @@ const Featured_listing = () => {
                      )
                  })}
              </div>
-            {properties?.length > 9 && (
+            {properties?.length > 6 && (
   <div className="text-center my-8">
-    {count < properties.length ? (
-      <Button 
-        onClick={seeMoreHandle} 
+      <Link to={"/properties"}>
+        <Button 
         sx={{ backgroundColor: "#8FA282" }} 
         variant="contained"
       >
         See More
       </Button>
-    ) : (
-      <Button 
-        onClick={() => setCount(9)} 
-        sx={{ backgroundColor: "#8FA282" }} 
-        variant="contained"
-      >
-        Show Less
-      </Button>
-    )}
+      </Link>
+    
   </div>
 )}
          </div>

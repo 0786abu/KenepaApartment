@@ -27,6 +27,8 @@ import CarDetail from "./components/CarDetail"
 import VisionPage from "./components/OurMission"
 import FAQPage from "./components/FAQ"
 import About from "./components/About"
+import Properties from "./components/Properties"
+import RentalcarsListing from "./components/RentalCarsListing"
 const App = () => {
   const location = useLocation();
     
@@ -73,6 +75,8 @@ const App = () => {
         <Route path="/FAQ" element={<FAQPage/>}></Route>
         <Route path="/our-mission" element={<VisionPage/>}></Route>
         <Route path="/onze-appartementen" element={<About/>}></Route>
+        <Route path="/properties" element={<Properties/>}></Route>
+        <Route path="/cars" element={<RentalcarsListing/>}></Route>
 
         {/* Dashboard */}
         

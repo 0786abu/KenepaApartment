@@ -31,13 +31,15 @@ export const Create_Propertyy = (property)=>async(dispatch)=>{
 export const Fetch_Properties = (filters = {})=>async(dispatch)=>{
     dispatch(setPropertyLoading())
     try {
-        const { amenities, category, property_type, address, propertyDuration } = filters;
+        const { amenities, category, property_type, address, propertyDuration, minPrice, maxPrice } = filters;
         const queryParams = new URLSearchParams();
         if(amenities) queryParams.append("amenities", amenities);
         if(category) queryParams.append("category", category);
         if(property_type) queryParams.append("property_type", property_type);
         if(address) queryParams.append("address", address);
         if(propertyDuration) queryParams.append("propertyDuration", propertyDuration);
+        if(minPrice) queryParams.append("minPrice", minPrice);
+        if(maxPrice) queryParams.append("maxPrice", maxPrice);
         const {data} = await axios.get(`${API_BASE_URL}/property/properties?${queryParams.toString()}`,{
             headers:{
                 "Content-Type":"application/json"

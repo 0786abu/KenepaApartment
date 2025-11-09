@@ -13,6 +13,8 @@ const navItems = [
     title: 'Home',
     href: '/',
   },
+  { title: 'Properties', href: '/properties' },
+  { title: 'Cars', href: '/cars' },
   { title: 'Onze missie', href: '/our-mission' },
   { title: 'Veel gestelde vragen', href: '/FAQ' },
   { title: 'Onze appartementen', href: '/onze-appartementen' },
@@ -288,7 +290,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 relative group ${textClass} ${pathname === item.href ? 'text-gray-900' : hoverClass} `}
+                      className={`inline-flex items-center text-sm font-medium rounded-md transition-all duration-200 relative group ${textClass} ${pathname === item.href ? 'text-gray-900' : hoverClass} `}
                     >
                       {item.title}
                       <span

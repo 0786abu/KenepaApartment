@@ -66,13 +66,24 @@ const Property_detail = () => {
                          <div className="grid-layout gap-2 mx-4 mt-20 mb-10">
                              <div className="sec-1 w-full">
                                <div className="wrapper">
-                                 <div className=' grid sm:grid-cols-3 grid-cols-2 gap-4 md:gap-8'>
+                                 <div className=' grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-8'>
                                    <p className=' px-4 py-1 font-[400] bg-[#E8C696] text-white inline-block'>For Rent</p>
                                    <p className='text-font-[300] text-sm text-gray-500'><CalendarMonth sx={{color:"#E8C696"}}/> {property?.posteddate}</p>
                                    <p className='text-font-[300] text-sm text-gray-500 flex items-center gap-1'><span><Landmark className='text-[#E8C696]'/></span> <span>{property?.location?.zipcode}</span></p>
+                                   <div>
+                                    <select className='border border-slate-200 rounded-sm p-2'>
+                                      <option>See Availabilities</option>
+                                      {property?.availabilities?.map((ave,index)=>{
+                                        return <option key={index} className=' space-x-2 block'>
+                                          {ave.date} - {ave.isBooked === true ? "Already Book" : "Available"}
+                                        </option>
+                                      })}
+                                    </select>
+                                  </div>
                                  </div>
                                  <h2 className=' text-4xl font-[700] font-sans mt-8'>{property?.title}</h2>
                                   <p className=' font-[350] text-sm my-6 text-gray-600'><Place sx={{marginRight:"6px",color:"#8FA282"}}/> {property?.location?.address}</p>
+                                  
                                  <h2 className=' text-2xl pl-2 font-[700] border-l-2 border-[#8FA282] font-sans mt-8'>Description</h2>
                                  <div className=' mt-6 property_detail'>
                                    <div dangerouslySetInnerHTML={{__html:property?.property_detail}}>
