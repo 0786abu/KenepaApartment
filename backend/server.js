@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ["https://kenepaapartment.com","http://localhost:5173"],
+  origin: ["https://kenepaapartment.com"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'Origin', 'X-Requested-With', 'Accept'],
   methods: ["GET", "POST", "PUT", "DELETE"]
