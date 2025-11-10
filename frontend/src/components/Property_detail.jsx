@@ -118,7 +118,7 @@ const Property_detail = () => {
                                  </div>
  
                                  {related?.length>0 ? (<>
-                                  <h2 className=' text-2xl pl-2 font-[700] border-l-2 border-[#ff5a3c] font-sans mt-8'>Related Propertyies</h2>
+                                  <h2 className=' text-2xl pl-2 font-[700] border-l-2 border-[#ff5a3c] font-sans mt-8'>Related Properties</h2>
                                  <div className="relative-wrapper mt-8">
                                    <div className="cards grid max-[550px]:grid-cols-1 grid-cols-2 gap-4">
                                    {related?.map((item,index)=>{
