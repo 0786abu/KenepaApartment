@@ -98,7 +98,7 @@ const Property_detail = () => {
                                      <p className=' w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Home Area: <span className='font-[400] ml-10 text-lg text-black text-start'>{property?.size} ft</span></p>
                                      <p className=' w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Rooms: <span className='font-[400] ml-10 text-lg text-black text-start'>{property?.rooms}</span></p>
                                      <p className=' w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Baths: <span className='font-[400] ml-10 text-lg text-black text-start'>{property?.bathrooms}</span></p>
-                                     <p className=' w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Property Status: <span className='font-[400] ml-10 text-lg text-black text-start'>For {property?.category}</span></p>
+                                     <p className=' w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Property Status: <span className='font-[400] ml-10 text-lg text-black text-start'>For Rent</span></p>
                                    </div>
                                    <div className=' space-y-4 w-full my-4 sm:w-1/2 sm:flex flex-col'>
                                      <p className='w-[250px] flex items-center justify-between text-gray-500 font-[350] text-sm'>Build year: <span className='font-[400] ml-10 text-lg text-black text-start'>{property?.years_of_build}</span></p>
