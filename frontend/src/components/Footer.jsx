@@ -1,5 +1,19 @@
 import { Link } from "react-router-dom"
 
+
+const navItems = [
+  {
+    title: 'Home',
+    href: '/',
+  },
+  { title: 'Over ons', href: '/about' },
+  { title: 'Onze appartementen', href: '/properties' },
+  { title: 'Wat kun je van ons verwachten', href: '/expectation' },
+  { title: 'Auto verhuur', href: '/cars' },
+  { title: 'Veel gestelde vragen', href: '/FAQ' },
+  { title: 'Contact', href: '/contact' },
+]
+
 const Footer = () => {
   return (
     <div>
@@ -14,14 +28,12 @@ const Footer = () => {
                         alt="Logo"
                       />
                     </Link>
-                    <h2 className="text-2xl font-bold leading-tight tracking-tight">KenepaApartment</h2>
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight">Kenepa Apartments</h2>
       </div>
-      <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
-        <li><Link to="/" className="hover:text-[#A0B591]">Home</Link></li>
-        <li><Link to="/our-mission" className="hover:text-[#A0B591] ">Onze missie</Link></li>
-        <li><Link to="/FAQ" className="hover:text-[#A0B591] ">Veel gestelde vragen</Link></li>
-        <li><Link to='/onze-appartementen' className="hover:text-[#A0B591] ">Onze appartementen</Link></li>
-        <li><Link to="/contact" className="hover:text-[#A0B591] ">Contact Us</Link></li>
+      <ul className="text-lg flex flex-wrap items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
+       {navItems.map((item,index)=>{
+        return  <li key={index}><Link to={item.href} className="hover:text-[#A0B591]">{item.title}</Link></li>
+       })}
       </ul>
       <div className="flex space-x-10 justify-center items-center mb-14">
         <Link to={"https://www.instagram.com/kenepa_apartments"} className="block transition-all duration-500 hover:text-[#A0B591] ">

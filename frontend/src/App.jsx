@@ -29,6 +29,7 @@ import FAQPage from "./components/FAQ"
 import About from "./components/About"
 import Properties from "./components/Properties"
 import RentalcarsListing from "./components/RentalCarsListing"
+import Expectations from "./components/Expect"
 const App = () => {
   const location = useLocation();
     
@@ -74,9 +75,10 @@ const App = () => {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/FAQ" element={<FAQPage/>}></Route>
         <Route path="/our-mission" element={<VisionPage/>}></Route>
-        <Route path="/onze-appartementen" element={<About/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
         <Route path="/properties" element={<Properties/>}></Route>
         <Route path="/cars" element={<RentalcarsListing/>}></Route>
+        <Route path="/expectation" element={<Expectations/>}></Route>
 
         {/* Dashboard */}
         

@@ -4,44 +4,52 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Zijn de appartementen gemeubileerd?",
-    a: "Ja, al onze appartementen zijn volledig gemeubileerd en van alle gemakken voorzien. U vindt er meubels, een ingerichte keuken, badkamer, slaapkamer, televisie en wifi — u kunt dus direct intrekken.",
+    q: "Zijn de appartementen ondersteund?",
+    a: "Ja, al onze appartementen zijn volledig uitgerust en van alle gemakken voorzien. Je vindter meubels, een ingerichte keuken, badkamer, slaapkamer, televisie en wifi. Je kunt dus direct intrekken.",
   },
   {
     q: "Wat is de minimale huurperiode?",
-    a: "De minimale huurperiode is 6 maanden. Zo kunnen we rust en continuïteit bieden aan onze bewoners.",
+    a: "De minimale huurperiode is 3 maanden. Zo kunnen we rust en continuïteit bieden aan onze bewoners.",
+  },
+  {
+    q: "Wat is de maximale huurperiode?",
+    a: "De maximale huurperiode is 12 maanden.",
   },
   {
     q: "Wat is bij de huurprijs inbegrepen?",
-    a: "In de huurprijs zijn het gebruik van meubels, wifi en televisie inbegrepen. Water en elektriciteit worden meestal apart berekend op basis van verbruik. Neem gerust contact met ons op voor de exacte details.",
+    a: "In de huurprijs zijn het gebruik van meubels, wifi en televisie inbegrepen. Water en elektriciteit worden maandelijks apart berekend op basis van verbruik.",
   },
   {
     q: "Is er een wasmachine aanwezig?",
-    a: "Ja, er is een washok op het terrein waar bewoners gebruik van kunnen maken. Zo kunt u gemakkelijk uw was doen zonder dat u zelf een wasmachine hoeft te hebben in het appartement.",
+    a: "Ja, er is een washok op het terrein waar bewoners gebruik van kunnen maken voor 6 XCG. Zo kun je gemakkelijk je was doen zonder dat je zelf een wasmachine in het appartement hoeft te hebben.",
   },
   {
     q: "Is er parkeergelegenheid?",
-    a: "Ja, er is parkeergelegenheid op het terrein én buiten het terrein. U kunt uw auto dus altijd dichtbij parkeren.",
+    a: "Ja, er is parkeergelegenheid op het terrein én buiten het terrein. Je kunt je auto dus altijd dichtbij parkeren.",
   },
   {
     q: "Mag ik gebruikmaken van het zwembad?",
-    a: "Zeker! Bewoners kunnen vrij gebruikmaken van het zwembad op het terrein — heerlijk om even af te koelen of te ontspannen na een drukke dag.",
+    a: "Zeker! Bewoners kunnen tussen 8:00 uur en 22:00 uur vrij gebruikmaken van hetzwembad op het terrein. Heerlijk om even af te koelen of te ontspannen na een drukkedag.",
+  },
+  {
+    q: "Mogen mijn bezoekers gebruikmaken van het zwembad?",
+    a: "Nee, het zwembad is speciaal voor onze gasten die bij Kenepa verblijven. Zo kunnen zijin alle rust genieten van hun verblijf.",
   },
   {
     q: "Voor wie zijn de appartementen bedoeld?",
-    a: "Onze appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten — of u nu op Curaçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plek om te wonen.",
+    a: "Onze appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten. Of je nu opCuraçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plekom te wonen.",
   },
   {
     q: "Waar ligt Kenepa Apartments?",
-    a: "Kenepa Apartments ligt op een centrale en rustige locatie. Supermarkt, bushalte en diverse winkels zijn dichtbij, en Mambo Beach ligt op slechts 10 minuten rijden.",
-  },
-  {
-    q: "Hoe kan ik een appartement reserveren?",
-    a: "U kunt eenvoudig contact met ons opnemen via e-mail, WhatsApp of het contactformulier op de website. We informeren u graag over de beschikbaarheid en plannen met plezier een bezichtiging in.",
+    a: "Kenepa Apartments ligt in Dominguito, een centrale en rustige locatie. Supermarkt en Mambo Beach ligt op slechts 5 minuten afstand",
   },
   {
     q: "Kan ik iemand spreken als ik vragen heb tijdens mijn verblijf?",
-    a: "Natuurlijk! We zijn altijd bereikbaar voor onze bewoners. Of het nu om een vraag, reparatie of tip gaat — we helpen u graag persoonlijk verder.",
+    a: "Natuurlijk! We zijn altijd bereikbaar voor onze bewoners. Of het nu om een vraag, reparatie of tip gaat we helpen je graag persoonlijk verder.",
+  },
+  {
+    q: "Hoe kan ik een appartement reserveren?",
+    a: "Je kunt eenvoudig contact met ons opnemen via e-mail, WhatsApp of het contactformulier op de website. We informeren je graag over de eschikbaarheid en plannen met plezier een bezichtiging in.",
   },
 ];
 
