@@ -35,7 +35,7 @@ const Property_detail = () => {
         // initialSlide: 0,
     }
   return (
-    <div>
+    <div className='bg-[#EFEBE7]'>
    {propertyloading ? (<Loader/>):(
       <div>
       <div className="header relative mt-16 h-[300px] bg-[url(https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/14.jpg)] bg-cover bg-no-repeat bg-center">
@@ -63,7 +63,7 @@ const Property_detail = () => {
                              </Slider>
                              {/* <h2>images</h2> */}
                          </div>
-                         <div className="grid-layout gap-2 mx-4 mt-20 mb-10">
+                         <div className="grid-layout gap-2 mx-4 mt-20 pb-10">
                              <div className="sec-1 w-full">
                                <div className="wrapper">
                                  <div className=' grid md:grid-cols-4 grid-cols-2 gap-4 md:gap-8'>

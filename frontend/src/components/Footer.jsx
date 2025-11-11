@@ -8,7 +8,7 @@ const navItems = [
   },
   { title: 'Over ons', href: '/about' },
   { title: 'appartementen', href: '/properties' },
-  { title: 'Auto verhuur', href: '/cars' },
+  { title: 'autoverhuur', href: '/cars' },
   { title: 'FAQ', href: '/FAQ' },
   { title: 'Contact', href: '/contact' },
 ]
