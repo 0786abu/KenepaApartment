@@ -104,13 +104,9 @@ const CarDetail = () => {
                                  </Link>
                              </div>
                              <div className=' p-2 lg:p-6'>
-                                 <p className=' text-xl font-[300] text-[#ff5a3c]'>For Rent</p>
                                  <Link to={`/car/${item._id}`}>
                                  <h2 className='text-lg lg:text-2xl font-[700] mt-2 line-clamp-1 hover:text-[#ff5a3c] cursor-pointer'>{item.carName}</h2>
                                  </Link>
-                                 <p className=' font-[350] text-sm my-4 text-gray-600'><Place sx={{marginRight:"6px",color:"#ff5a3c"}}/> {item.location.address}</p>
-                                 <hr className=' my-6'/>
-                                 <h2 className=' text-xl font-[700] font-sans text-[#ff5a3c]'>${`${item.price}`}</h2>
                              </div>
                          </div>
                                     )

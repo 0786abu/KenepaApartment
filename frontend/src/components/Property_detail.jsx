@@ -130,12 +130,11 @@ const Property_detail = () => {
                                  </Link>
                              </div>
                              <div className=' p-2 lg:p-6'>
-                                 <p className=' text-xl font-[300] text-[#ff5a3c]'>For {item.category}</p>
+                                 <p className=' text-xl font-[300] text-[#ff5a3c]'>For Rent</p>
                                  <Link to={`/detail/${item._id}`}>
                                  <h2 className='text-lg lg:text-2xl font-[700] mt-2 line-clamp-1 hover:text-[#ff5a3c] cursor-pointer'>{item.title}</h2>
                                  </Link>
-                                 <p className=' font-[350] text-sm my-4 text-gray-600'><Place sx={{marginRight:"6px",color:"#ff5a3c"}}/> {item.location.address}</p>
-                                 <p className=' space-x-4 font-[350] text-lg font-sans'><span className=' text-gray-600'>{item.rooms} <Bed sx={{color:"#ff5a3c"}}/></span><span className=' text-gray-600'>{item.bathrooms} <Shower sx={{color:"#ff5a3c"}}/></span><span className=' text-gray-600'>{item.size} Squared ft</span></p>
+                                 <p className=' space-x-4 font-[350] text-lg font-sans'><span className=' text-gray-600'>{item.rooms} <Bed sx={{color:"#ff5a3c"}}/></span><span className=' text-gray-600'>{item.bathrooms} <Shower sx={{color:"#ff5a3c"}}/></span></p>
                                  <hr className=' my-6'/>
                                  <h2 className=' text-xl font-[700] font-sans text-[#ff5a3c]'>${`${item.price} ${item.category==="rent"? <span className=' font-[400] text-base'>/Month</span>:""}`}</h2>
                              </div>
