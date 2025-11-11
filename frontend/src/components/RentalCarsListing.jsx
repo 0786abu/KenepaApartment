@@ -14,8 +14,8 @@ const RentalcarsListing = () => {
     },[dispatch])
   return (
     <div>
-        <div className="wrapper mt-32">
-            <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4 my-20">
+        <div className="wrapper py-20 md:py-28 bg-[#EFEBE7]">
+            <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4 mt-16">
 
                 <div className="sec-2 w-full">
                {carloading ? (<Loader/>): cars?.length===0 ? (<div className=' flex justify-center items-center h-[80vh]'>
@@ -27,7 +27,7 @@ const RentalcarsListing = () => {
                     <div className="cards grid grid-cols-1 min-[430px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                        {cars?.slice(0,6)?.map((p,index)=>{
                         return (
-                            <div key={index} className="card group shadow-md mx-auto">
+                            <div key={index} className="card bg-white group shadow-md mx-auto">
                             <div className="img overflow-hidden">
                                 <Link to={`/car/${p._id}`}>
                                   <img src={`${import.meta.env.VITE_BASE_URL}${p.images[0]}`} className=' w-full h-[250px] object-cover group-hover:scale-110 duration-300 transition-all' alt="" />

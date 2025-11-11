@@ -23,8 +23,8 @@ const Properties = () => {
   ]);
   return (
     <div>
-      <div className="wrapper mt-28 md:mt-36">
-        <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4 my-20">
+      <div className="wrapper py-20 md:py-28 bg-[#EFEBE7]">
+        <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4 mt-16">
 
           <div className="sec-2 w-full">
             {propertyloading ? (
@@ -44,7 +44,7 @@ const Properties = () => {
                     return (
                       <div
                         key={index}
-                        className="card group shadow-md mx-auto"
+                        className="card bg-white group shadow-md mx-auto"
                       >
                         <div className="img relative overflow-hidden">
                           <Link to={`/detail/${p._id}`}>

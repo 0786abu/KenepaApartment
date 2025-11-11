@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Zijn de appartementen ondersteund?",
-    a: "Ja, al onze appartementen zijn volledig uitgerust en van alle gemakken voorzien. Je vindter meubels, een ingerichte keuken, badkamer, slaapkamer, televisie en wifi. Je kunt dus direct intrekken.",
+    q: "Zijn de appartementen ingericht?",
+    a: " Ja, al onze appartementen zijn volledig gemeubileerd en van alle gemakken voorzien. Je kunt dus direct trekken.",
   },
   {
     q: "Wat is de minimale huurperiode?",
@@ -29,15 +29,15 @@ const faqs = [
   },
   {
     q: "Mag ik gebruikmaken van het zwembad?",
-    a: "Zeker! Bewoners kunnen tussen 8:00 uur en 22:00 uur vrij gebruikmaken van hetzwembad op het terrein. Heerlijk om even af te koelen of te ontspannen na een drukkedag.",
+    a: "Zeker! Bewoners kunnen tussen 8:00 uur en 22:00 uur vrij gebruikmaken van het zwembad op het terrein. Heerlijk om even af te koelen of te ontspannen na een drukke dag.",
   },
   {
     q: "Mogen mijn bezoekers gebruikmaken van het zwembad?",
-    a: "Nee, het zwembad is speciaal voor onze gasten die bij Kenepa verblijven. Zo kunnen zijin alle rust genieten van hun verblijf.",
+    a: "Nee, het zwembad is speciaal voor onze gasten die bij Kenepa verblijven. Zo kunnen zij in alle rust genieten van hun verblijf.",
   },
   {
     q: "Voor wie zijn de appartementen bedoeld?",
-    a: "Onze appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten. Of je nu opCuraçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plekom te wonen.",
+    a: "appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten. Of je nu op Curaçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plek om te wonen.",
   },
   {
     q: "Waar ligt Kenepa Apartments?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Kan ik iemand spreken als ik vragen heb tijdens mijn verblijf?",
-    a: "Natuurlijk! We zijn altijd bereikbaar voor onze bewoners. Of het nu om een vraag, reparatie of tip gaat we helpen je graag persoonlijk verder.",
+    a: "Natuurlijk! We zijn altijd bereikbaar voor bewoners. Of het nu om een vraag, reparatie of tip gaat we helpen je graag persoonlijk verder.",
   },
   {
     q: "Hoe kan ik een appartement reserveren?",
@@ -91,11 +91,12 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="max-w-3xl mt-16 mx-auto px-6 py-20">
+    <main className="bg-[#EFEBE7]">
+      <div className="max-w-3xl mt-16 mx-auto px-6 py-20 ">
       <h1 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Veelgestelde vragen
       </h1>
-      <div className="space-y-4 border border-slate-200 p-4 rounded-lg shadow-sm">
+      <div className="space-y-4 border bg-white border-slate-200 p-4 rounded-lg shadow-sm">
         {faqs.map((f, idx) => (
           <AccordionItem
             key={idx}
@@ -106,6 +107,7 @@ export default function FAQPage() {
           />
         ))}
       </div>
+    </div>
     </main>
   );
 }

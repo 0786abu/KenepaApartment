@@ -10,7 +10,7 @@ const Expectations = () => {
 
         {/* Intro */}
         <p className="text-justify leading-relaxed mb-8">
-          Onze volledig ingerichte appartementen bieden alles wat je nodig hebt
+          volledig ingerichte appartementen bieden alles wat je nodig hebt
           voor een comfortabel en zorgeloos verblijf. Of je nu op Curaçao bent
           voor werk, stage of gewoon ontspanning, bij Kenepa Apartments voel je
           je direct thuis.
@@ -38,7 +38,7 @@ const Expectations = () => {
         {/* Section 2 */}
         <h3 className="text-xl font-medium mb-3">Voor langere verblijven</h3>
         <p className="text-justify leading-relaxed mb-8">
-          We verhuren onze appartementen voor een minimale periode van 3 maanden
+          We verhuren appartementen voor een minimale periode van 3 maanden
           en maximaal 12 maanden. Perfect voor stagiairs, expats of iedereen die
           voor langere tijd op Curaçao wil wonen zonder zorgen over inrichting
           of langdurige huurcontracten.
@@ -53,7 +53,7 @@ const Expectations = () => {
           ook van een ontspannen sfeer. Op ons terrein vind je onder andere:
         </p>
         <ul className="list-disc pl-6 space-y-1 mb-8">
-          <li>Een verfrissend zwembad</li>
+          <li>Een verfrissend het zwembad</li>
           <li>Parkeergelegenheid</li>
           <li>Een veilige en rustige omgeving</li>
           <li>Washok</li>

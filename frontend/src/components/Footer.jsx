@@ -7,10 +7,9 @@ const navItems = [
     href: '/',
   },
   { title: 'Over ons', href: '/about' },
-  { title: 'Onze appartementen', href: '/properties' },
-  { title: 'Wat kun je van ons verwachten', href: '/expectation' },
+  { title: 'appartementen', href: '/properties' },
   { title: 'Auto verhuur', href: '/cars' },
-  { title: 'Veel gestelde vragen', href: '/FAQ' },
+  { title: 'FAQ', href: '/FAQ' },
   { title: 'Contact', href: '/contact' },
 ]
 
