@@ -123,7 +123,7 @@ const Property_detail = () => {
                                    <div className="cards grid max-[550px]:grid-cols-1 grid-cols-2 gap-4">
                                    {related?.map((item,index)=>{
                                     return(
-                                      <div key={index} className="card group shadow-md ">
+                                      <div key={index} className="card bg-white group shadow-md ">
                              <div className="img overflow-hidden">
                                  <Link to={`/detail/${item._id}`}>
                                    <img src={`${import.meta.env.VITE_BASE_URL}${item.images[0]}`} className=' w-full group-hover:scale-110 duration-300 transition-all' alt="" />
