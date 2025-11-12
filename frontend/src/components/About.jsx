@@ -28,7 +28,7 @@ thuis.
         <section>
           <h1 className="text-3xl font-semibold mb-4">Wat wij bieden</h1>
           <p className="leading-relaxed">
-            volledig ingerichte appartementen bieden alles wat je nodig hebt
+            Volledig ingerichte appartementen bieden alles wat je nodig hebt
             voor een comfortabel en zorgeloos verblijf. Of je nu op Curaçao bent
             voor werk, stage of gewoon ontspanning, bij Kenepa Apartments voel je je
             direct thuis.
