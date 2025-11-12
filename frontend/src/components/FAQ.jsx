@@ -91,7 +91,7 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="bg-[#EFEBE7] py-14 md:py-28">
+    <main className="bg-[#EFEBE7] py-20 md:py-28">
       <div className="max-w-3xl mx-auto px-6 ">
       <h1 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Veelgestelde vragen
