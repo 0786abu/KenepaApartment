@@ -14,8 +14,8 @@ const RentalcarsListing = () => {
     },[dispatch])
   return (
     <div>
-        <div className="wrapper py-20 md:py-28 bg-[#EFEBE7]">
-            <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4 mt-16">
+        <div className="wrapper py-14 md:py-28 bg-[#EFEBE7]">
+            <div className="grid-layout-wrapper max-w-6xl mx-auto p-2 gap-4">
 
                 <div className="sec-2 w-full">
                {carloading ? (<Loader/>): cars?.length===0 ? (<div className=' flex justify-center items-center h-[80vh]'>

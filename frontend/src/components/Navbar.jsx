@@ -235,21 +235,6 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-[100] pt-1 transition-all duration-300 ease-in-out flex items-center ${bgClass} border-b border-gray-200`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className='flex justify-center items-center'>
-            <div>
-              <a
-        href="https://wa.me/+31655518120"
-        target="_blank"
-        rel="noopener noreferrer"
-        className=" bg-green-500 hover:bg-green-600 text-white p-3 flex justify-center items-center rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 space-x-1"
-        aria-label="Contact us on WhatsApp"
-        title="Contact us on WhatsApp (+31 655 518 120)"
-      >
-        <WhatsAppIcon fontSize="medium" />
-        <span>WhatsApp Met Ons</span>
-      </a>
-            </div>
-          </div>
           <div className="flex justify-between items-center h-full">
             {/* Logo */}
             <div className="flex-shrink-0">

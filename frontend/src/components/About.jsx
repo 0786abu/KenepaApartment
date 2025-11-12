@@ -1,9 +1,30 @@
 
 export default function OverOns() {
   return (
-    <div className="min-h-screen mt-16 md:mt-24 bg-[#EFEBE7] text-gray-800 px-6 md:px-20 py-16">
+    <div className="min-h-screen pt-16 pb-10 md:pt-28 bg-[#EFEBE7] text-gray-800 px-6 md:px-20">
       <div className="max-w-3xl mx-auto space-y-10">
-        {/* Wat wij bieden */}
+        {/* Wat is Kenepa Apartments */}
+        <section>
+          <h1 className="text-3xl font-semibold mb-4">Wat is Kenepa Apartments</h1>
+          <p className="leading-relaxed my-2">
+            In 2022 hebben we Kenepa Apartments opgericht met één helder doel: een plek creëren
+waar jij je écht thuis voelt. Een plek waar warmte, gemak en ontspanning samenkomen
+of je nu op Curaçao bent voor werk, stage of gewoon om even op te laden.
+
+          </p>
+          <p className="leading-relaxed my-2">
+            Bij Kenepa Apartments geloven we dat iedereen een thuis verdient, ook als het verblijf
+tijdelijk is. Kenepa Apartments ligt in een rustige omgeving waar je helemaal kunt
+ontspannen. Hier groet je elkaar, voel je je welkom vanaf het eerste moment en kom je
+tot rust na een lange dag.
+          </p>
+          <p className="leading-relaxed my-2">
+            Wat Kenepa Apartments zo bijzonder maakt? Naast de comfortabele accommodaties
+en persoonlijke service, bieden we ook de mogelijkheid om je verblijf te combineren met
+een huurauto. Zo geniet je van het eiland in alle vrijheid met het vertrouwde gevoel van
+thuis.
+          </p>
+        </section>
         <section>
           <h1 className="text-3xl font-semibold mb-4">Wat wij bieden</h1>
           <p className="leading-relaxed">

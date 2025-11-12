@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Voor wie zijn de appartementen bedoeld?",
-    a: "appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten. Of je nu op Curaçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plek om te wonen.",
+    a: "Onze appartementen zijn bedoeld voor iedereen die zorgeloos wil genieten. Of je nu op Curaçao bent voor werk, stage of gewoon op zoek bent naar een fijne, comfortabele plek om te wonen.",
   },
   {
     q: "Waar ligt Kenepa Apartments?",
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "Hoe kan ik een appartement reserveren?",
-    a: "Je kunt eenvoudig contact met ons opnemen via e-mail, WhatsApp of het contactformulier op de website. We informeren je graag over de eschikbaarheid en plannen met plezier een bezichtiging in.",
+    a: "Je kunt eenvoudig contact met ons opnemen via e-mail, WhatsApp of het contactformulier op de website. We informeren je graag over de beschikbaarheid en plannen met plezier een bezichtiging in.",
   },
 ];
 
@@ -91,8 +91,8 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="bg-[#EFEBE7]">
-      <div className="max-w-3xl mt-16 mx-auto px-6 py-20 ">
+    <main className="bg-[#EFEBE7] py-14 md:py-28">
+      <div className="max-w-3xl mx-auto px-6 ">
       <h1 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Veelgestelde vragen
       </h1>

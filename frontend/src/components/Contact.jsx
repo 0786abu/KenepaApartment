@@ -1,4 +1,4 @@
-import { Edit, House, LocalPhone, MailOutline, Person, PinDrop } from "@mui/icons-material"
+import { Edit, LocalPhone, MailOutline, Person, PinDrop } from "@mui/icons-material"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { Create_Contact } from "../redux/action/contactAction";
@@ -18,19 +18,9 @@ const Contact = () => {
         dispatch(Create_Contact(contact))
     }
   return (
-    <div className=" min-h-screen bg-[#EFEBE7]">
-        <div className="header relative mt-16 h-[300px] bg-[url(https://tunatheme.com/tf/html/quarter-preview/quarter/img/bg/14.jpg)] bg-cover bg-no-repeat bg-center">
-                  <div className=" max-[450px]:w-[250px] min-w-[200px] text-center absolute top-[50%] -translate-y-[50%] left-[50%] z-40 -translate-x-[50%]">
-                    <h2 className=" text-4xl mb-6 font-[800] text-black font-sans">Contact</h2>
-                    <div className=" flex justify-start items-center gap-2">
-                      <span><House sx={{color:"#8FA282",fontSize:"30px"}}/></span>
-                      <span className=" text-black font-[600] font-sans text-lg">Home {">"} </span>
-                      <span className=" font-[600] text-black font-sans text-lg">Contact Us</span>
-                    </div>
-                  </div>
-                </div>
+    <div className=" min-h-screen pt-28 bg-[#EFEBE7]">
 
-                <div className="details max-w-6xl mx-auto sm:p-4 p-2 my-28">
+                <div className="details max-w-6xl mx-auto sm:p-4 p-2 mb-10">
                     <div className="cards grid lg:grid-cols-3 sm:grid-cols-2 gap-6 grid-cols-1">
                         <div className="card bg-white p-6 w-full border max-[640px]:w-[350px] mx-auto max-[400px]:w-full">
                             <div className=" text-center my-6"><MailOutline sx={{fontSize:"80px",color:"#8FA282"}}/></div>
@@ -56,7 +46,7 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <div className="contact-form-wrapper max-w-6xl mx-auto my-20 bg-white">
+                <div className="contact-form-wrapper max-w-6xl mx-auto my-10 bg-white">
                     <form className="formm border p-2 md:p-6 w-full shadow-md" onSubmit={handlesumbit}>
                         <div className="wrapper">
                             <h2 className=" text-3xl font-sans font-[600] mb-8">Neem contact met ons op</h2>

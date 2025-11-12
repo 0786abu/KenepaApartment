@@ -16,7 +16,7 @@ const navItems = [
 const Footer = () => {
   return (
     <div>
-       <footer className="w-full py-8 bg-black text-white">
+       <footer className="w-full py-8 bg-[#ad795b] text-white">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="max-w-3xl mx-auto">
       <div className="flex justify-center items-center gap-2">

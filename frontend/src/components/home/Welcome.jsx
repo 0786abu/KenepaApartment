@@ -1,6 +1,6 @@
 export default function WelcomeSection() {
   return (
-    <section className="w-full py-20 bg-[#EFEBE7]">
+    <section className="w-full py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold mb-4">
           Welkom bij Kenepa Apartments, jouw thuis op Curaçao
