@@ -55,12 +55,6 @@ thuis.
           <p className="leading-relaxed mt-4">
             Je hoeft alleen je koffers neer te zetten en het genieten kan beginnen!
           </p>
-
-          {/* Newly added client text */}
-          <p className="leading-relaxed mt-4">
-            Ja, al appartementen zijn volledig gemeubileerd en van alle gemakken voorzien.
-            Je kunt dus direct trekken.
-          </p>
         </section>
 
         {/* Voor langere verblijven */}
