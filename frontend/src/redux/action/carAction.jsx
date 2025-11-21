@@ -82,7 +82,7 @@ export const UpdateCar = (car,id,route)=>async(dispatch)=>{
     try {
         const {data} = await axios.put(`${API_BASE_URL}/car/update/${id}`,car,{
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"multipart/form-data"
             },
             withCredentials:true
         });

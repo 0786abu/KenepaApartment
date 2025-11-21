@@ -82,6 +82,22 @@ export const updateCar = async (req, res) => {
       carModel,
     } = req.body;
 
+    let existingImages = [];
+            if (req.body.existingImages) {
+                existingImages = JSON.parse(req.body.existingImages); 
+                // frontend se array string me aata hai
+            }
+    
+            // 2. Agar admin ne nayi images upload ki using multer
+            let newImages = [];
+            if (req.files && req.files.length > 0) {
+                newImages = req.files.map((file) => file.path); 
+                // Cloud or uploads folder ka path milega
+            }
+    
+            // 3. Final images → purani jo rakhni hain + nayi jo upload hui
+            const finalImages = [...existingImages, ...newImages];
+
 
     // Step 3: Update car details
     const updatedCar = await Car.findByIdAndUpdate(
@@ -94,7 +110,8 @@ export const updateCar = async (req, res) => {
         google_map_link,
         carType,
         carRentDuration,
-        carModel
+        carModel,
+        images:finalImages
       },
       { new: true }
     );

@@ -132,7 +132,7 @@ export const Update_Propertyy = (property_id,property,navigate)=>async(dispatch)
     try {
         const {data} = await axios.put(`${API_BASE_URL}/property/update_property/${property_id}`,property,{
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"multipart/form-data"
             },
             withCredentials:true
         });

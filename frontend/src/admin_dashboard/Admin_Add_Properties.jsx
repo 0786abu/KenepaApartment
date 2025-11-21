@@ -279,6 +279,7 @@ formData.append("location[zipcode]", propertyData.location.zipcode);
         name="country" id="" className="w-full bg-gray-100 h-12 border outline-none rounded-sm border-gray-50">
             <option value="">Select Country</option>
             <option value="netherland">Netherland</option>
+            <option value="curacao">Curacao</option>
         </select>
       </div>
       <input

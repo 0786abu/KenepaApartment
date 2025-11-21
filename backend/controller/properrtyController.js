@@ -17,7 +17,6 @@ export const Property_create = async (req, res) => {
       google_map_link,
       property_type,
       size,
-      amenities,
       category,
       rooms,
       bathrooms,
@@ -44,6 +43,7 @@ export const Property_create = async (req, res) => {
       });
     }
     const availabilities = JSON.parse(req.body.availabilities);
+    const amenities = JSON.parse(req.body.amenities);
 
     // ✅ Generate uploaded image URLs (from multer)
     const images = req.files.map((file) => `/uploads/${file.filename}`);
@@ -266,7 +266,7 @@ export const Create_rating = async (req, res) => {
 export const Update_Property = async(req, res) => {
     try {
         const {
-            title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration, availabilities
+            title, description,property_detail, location, price, google_map_link, property_type, size, category, rooms, bathrooms, years_of_build, propertyDuration
         } = req.body;
         const { id } = req.params;
         if(!id){
@@ -275,8 +275,27 @@ export const Update_Property = async(req, res) => {
                 message: "Property not found"
             });
         }
-        
-        const property = await Property.findByIdAndUpdate(id,{title, description,property_detail, location, price, google_map_link, property_type, size, images, amenities, category, rooms, bathrooms, years_of_build, propertyDuration, availabilities},{new:true});
+        // -------- IMAGE LOGIC START --------
+
+        // 1. Purani images jo admin ne nahi delete ki
+        let existingImages = [];
+        if (req.body.existingImages) {
+            existingImages = JSON.parse(req.body.existingImages); 
+            // frontend se array string me aata hai
+        }
+
+        // 2. Agar admin ne nayi images upload ki using multer
+        let newImages = [];
+        if (req.files && req.files.length > 0) {
+            newImages = req.files.map((file) => file.path); 
+            // Cloud or uploads folder ka path milega
+        }
+        const availabilities = JSON.parse(req.body.availabilities)
+        const amenities = JSON.parse(req.body.amenities)
+
+        // 3. Final images → purani jo rakhni hain + nayi jo upload hui
+        const finalImages = [...existingImages, ...newImages];
+        const property = await Property.findByIdAndUpdate(id,{title, description,property_detail, location, price, google_map_link, property_type, size, images:finalImages, amenities, category, rooms, bathrooms, years_of_build, propertyDuration, availabilities},{new:true});
         
         res.status(200).json({
             success: true,

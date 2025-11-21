@@ -93,6 +93,12 @@ const Update_Property = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [property_detail, setProperty_detail] = useState('');
+    const [existingImages, setExistingImages] = useState([]);
+    const [images, setImages] = useState([]);
+   const handlechange = (e) => {
+  const files = Array.from(e.target.files); 
+  setImages(files);
+};
     const [propertyData, setPropertyData] = useState({
         title:"",
         description:"",
@@ -116,8 +122,38 @@ const Update_Property = () => {
     })
     const onlickhandle = async(e)=>{
         e.preventDefault();
-        propertyData.property_detail = property_detail;
-        dispatch(Update_Propertyy(id,propertyData,navigate))
+        const formData = new FormData();
+        formData.append("title", propertyData.title);
+  formData.append("description", propertyData.description);
+  formData.append("property_type", propertyData.property_type);
+  formData.append("price", propertyData.price);
+  formData.append("size", propertyData.size);
+  formData.append("rooms", propertyData.rooms);
+  formData.append("bathrooms", propertyData.bathrooms);
+  formData.append("category", propertyData.category);
+  formData.append("propertyDuration", propertyData.propertyDuration);
+  formData.append("years_of_build", propertyData.years_of_build);
+  formData.append("google_map_link", propertyData.google_map_link);
+  formData.append("availabilities", JSON.stringify(propertyData.availabilities));
+  formData.append("property_detail", property_detail);
+  formData.append("posteddate", new Date().toISOString());
+
+  // Nested location object ke liye stringify karo
+    formData.append("location[address]", propertyData.location.address);
+formData.append("location[state]", propertyData.location.state);
+formData.append("location[country]", propertyData.location.country);
+formData.append("location[zipcode]", propertyData.location.zipcode);
+  // Amenities array stringify karo
+  formData.append("amenities", JSON.stringify(propertyData.amenities));
+  formData.append("existingImages", JSON.stringify(existingImages));
+
+  // ✅ Multiple images append karo
+  if(images){
+    images.forEach((img) => {
+    formData.append("images", img);
+  });
+  }
+        dispatch(Update_Propertyy(id,formData,navigate))
     }
 
     const addAmenity = () => {
@@ -196,10 +232,12 @@ const Update_Property = () => {
               availabilities: property?.availabilities,
               google_map_link: property?.google_map_link,
               category: property?.category,
-              years_of_build: property?.years_of_build,
+              years_of_build: property?.years_of_build
             });
+            setExistingImages(property?.images)
         }
-      },[property])
+      },[property]);
+      console.log(propertyData.amenities)
   return (
    <div>
     <div>
@@ -290,6 +328,7 @@ const Update_Property = () => {
         name="country" id="" className="w-full bg-gray-100 h-12 border outline-none rounded-sm border-gray-50">
             <option value="">Select Country</option>
             <option value="netherland">Netherland</option>
+            <option value="curacao">Curacao</option>
         </select>
       </div>
      <div>
@@ -417,6 +456,14 @@ const Update_Property = () => {
                 return <option key={index} value={property}>{property==="Short-Term" ? "3-Days" : property==="Mid-Term" ? "1-Month" : "1-Year"}</option>
             })}
         </select>
+      </div>
+      <div>
+        <label className=' text-lg font-[600] font-sans mb-2'>Upload more images</label>
+      <input type="file"
+      onChange={handlechange}
+      multiple
+      name='images'
+        className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded" />
       </div>
      </div>
      <div className="mt-4 w-full sm:w-[60%] mx-auto my-4 border p-4">

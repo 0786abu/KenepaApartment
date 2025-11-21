@@ -85,8 +85,10 @@ const Admin_Update_Car = () => {
     const {id} = useParams();
     const [side, setSide] = useState(false); // Sidebar state
     const {user,actionloading} = useSelector((state)=>state.User);
-    const {createcarloading,car} = useSelector((state)=>state.Car);
+    const {updateloading,car} = useSelector((state)=>state.Car);
     const dispatch = useDispatch();
+    const [existingImages, setExistingImages] = useState([]);
+    const [images, setImages] = useState([]);
     const [propertyData, setPropertyData] = useState({
         carName:"",
         description:"",
@@ -103,6 +105,10 @@ const Admin_Update_Car = () => {
         carModel:""
     })
       const navigate = useNavigate();
+      const handlechange = (e)=>{
+        const files = Array.from(e.target.files);
+        setImages(files)
+      }
    const onlickhandle = async (e) => {
   e.preventDefault();
 
@@ -116,13 +122,18 @@ const Admin_Update_Car = () => {
   formData.append("google_map_link", propertyData.google_map_link);
   formData.append("carType", propertyData.carType);
   formData.append("carModel", propertyData.carModel);
+  formData.append("existingImages", JSON.stringify(existingImages));
 
   // Nested location object ke liye stringify karo
     formData.append("location[address]", propertyData.location.address);
 formData.append("location[state]", propertyData.location.state);
 formData.append("location[country]", propertyData.location.country);
 formData.append("location[zipcode]", propertyData.location.zipcode);
-
+if(Array.isArray(images) && images.length > 0){
+  images.forEach((img) => {
+    formData.append("images", img);
+  });
+}
   
   // Dispatch redux action me FormData bhejo
   dispatch(UpdateCar(formData,id,navigate));
@@ -148,7 +159,8 @@ useEffect(()=>{
         google_map_link:car.google_map_link,        
         carType:car.carType,        
         carModel:car.carModel,        
-    })
+    });
+    setExistingImages(car.images);
     }
 },[car])
   return (
@@ -232,6 +244,7 @@ useEffect(()=>{
         name="country" id="" className="w-full bg-gray-100 h-12 border outline-none rounded-sm border-gray-50">
             <option value="">Select Country</option>
             <option value="netherland">Netherland</option>
+            <option value="curacao">Curacao</option>
         </select>
       </div>
       <input
@@ -307,11 +320,18 @@ useEffect(()=>{
           required
         />
       </div>
+      <div>
+      <input type="file"
+      onChange={handlechange}
+      multiple
+      name='images'
+        className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded" />
+      </div>
      </div>
       <div className="mt-4">
-        <Button type='submit' disabled={createcarloading} variant='contained' sx={{background:"#1e2939",width:"100%"}}>
+        <Button type='submit' disabled={updateloading} variant='contained' sx={{background:"#1e2939",width:"100%"}}>
             
-  {createcarloading ? (
+  {updateloading ? (
     <>
       Submit
       <svg
